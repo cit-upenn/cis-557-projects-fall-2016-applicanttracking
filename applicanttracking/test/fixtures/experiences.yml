@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: experiences
+#
+#  id          :integer          not null, primary key
+#  start       :date
+#  end         :date
+#  current     :boolean
+#  title       :string
+#  company     :string
+#  description :string
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2016-10-29
+  end: 2016-10-29
+  current: false
+  title: MyString
+  company: MyString
+  description: MyString
+  user_id: 
+
+two:
+  start: 2016-10-29
+  end: 2016-10-29
+  current: false
+  title: MyString
+  company: MyString
+  description: MyString
+  user_id: 

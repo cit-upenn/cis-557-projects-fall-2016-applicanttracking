@@ -1,0 +1,48 @@
+<%- model_class = Extracurricular -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:start) %></th>
+      <th><%= model_class.human_attribute_name(:end) %></th>
+      <th><%= model_class.human_attribute_name(:organization) %></th>
+      <th><%= model_class.human_attribute_name(:current) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @extracurriculars.each do |extracurricular| %>
+      <tr>
+        <td><%= link_to extracurricular.id, extracurricular_path(extracurricular) %></td>
+        <td><%= extracurricular.start %></td>
+        <td><%= extracurricular.end %></td>
+        <td><%= extracurricular.organization %></td>
+        <td><%= extracurricular.current %></td>
+        <td><%= extracurricular.position %></td>
+        <td><%= extracurricular.description %></td>
+        <td><%= extracurricular.user_id %></td>
+        <td><%=l extracurricular.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_extracurricular_path(extracurricular), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      extracurricular_path(extracurricular),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_extracurricular_path,
+            :class => 'btn btn-primary' %>

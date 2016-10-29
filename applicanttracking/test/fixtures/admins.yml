@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: admins
+#
+#  id             :integer          not null, primary key
+#  api_auth_token :string
+#  email          :string
+#  first_name     :string
+#  middle_name    :string
+#  last_name      :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  api_auth_token: MyString
+  email: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+
+two:
+  api_auth_token: MyString
+  email: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString

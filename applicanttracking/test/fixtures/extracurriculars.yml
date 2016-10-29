@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: extracurriculars
+#
+#  id           :integer          not null, primary key
+#  start        :date
+#  end          :date
+#  organization :string
+#  current      :boolean
+#  position     :string
+#  description  :string
+#  user_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2016-10-29
+  end: 2016-10-29
+  organization: MyString
+  current: false
+  position: MyString
+  description: MyString
+  user_id: 
+
+two:
+  start: 2016-10-29
+  end: 2016-10-29
+  organization: MyString
+  current: false
+  position: MyString
+  description: MyString
+  user_id: 

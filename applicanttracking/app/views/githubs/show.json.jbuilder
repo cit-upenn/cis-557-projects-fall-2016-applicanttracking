@@ -1,0 +1,1 @@
+json.partial! "githubs/github", github: @github
