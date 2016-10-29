@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029175448) do
+ActiveRecord::Schema.define(version: 20161029201201) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "api_auth_token"
@@ -103,15 +103,15 @@ ActiveRecord::Schema.define(version: 20161029175448) do
     t.string   "middle_name"
     t.string   "last_name"
     t.date     "dob"
-    t.integer  "phone"
+    t.integer  "phone",          limit: 8
     t.string   "email"
     t.string   "street_address"
     t.string   "city"
     t.string   "state"
     t.string   "country"
     t.string   "zipcode"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
