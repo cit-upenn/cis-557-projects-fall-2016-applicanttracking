@@ -69,6 +69,10 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:api_auth_token, :email, :first_name, :middle_name, :last_name)
+      if Proc.new { |c| c.request.format == 'application/json' }
+        params.permit(:api_auth_token, :email, :first_name, :middle_name, :last_name)
+      else
+        params.require(:admin).permit(:api_auth_token, :email, :first_name, :middle_name, :last_name)
+      end
     end
 end

@@ -69,6 +69,10 @@ class LinkedinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def linkedin_params
-      params.require(:linkedin).permit(:path, :username, :user_id)
+      if Proc.new { |c| c.request.format == 'application/json' }
+        params.permit(:path, :username, :user_id)
+      else
+        params.require(:linkedin).permit(:path, :username, :user_id)
+      end
     end
 end
