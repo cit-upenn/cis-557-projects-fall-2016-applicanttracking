@@ -69,7 +69,7 @@ class GithubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def github_params
-      if Proc.new { |c| c.request.format == 'application/json' }
+      if request.format == 'application/json'
         params.permit(:path, :username, :user_id)
       else
         params.require(:github).permit(:path, :username, :user_id)

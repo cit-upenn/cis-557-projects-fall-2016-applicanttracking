@@ -69,7 +69,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      if Proc.new { |c| c.request.format == 'application/json' }
+      if request.format == 'application/json'
         params.permit(:first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode)
       else
         params.require(:user).permit(:first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode)
