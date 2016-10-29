@@ -69,6 +69,10 @@ class AwardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def award_params
-      params.require(:award).permit(:name, :description, :date, :user_id)
+      if Proc.new { |c| c.request.format == 'application/json' }
+        params.permit(:name, :description, :date, :user_id)
+      else
+        params.require(:award).permit(:name, :description, :date, :user_id)
+      end
     end
 end
