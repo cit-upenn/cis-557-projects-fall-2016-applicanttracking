@@ -15,44 +15,81 @@ end
 
 
 # => Awards                                 #
-Given (/^that I am on the Awards Page$/ ) do
+Given (/^that I am on the New Awards Page$/ ) do
 	visit("http://localhost:3000/awards/new")
 end
 
+Given (/^that I am on the Awards Page$/ ) do
+	visit("http://localhost:3000/awards")
+end
+
 # => Admins 								#
-Given (/^that I am on the Admins Page$/ ) do
+Given (/^that I am on the New Admins Page$/ ) do
 	visit("http://localhost:3000/admins/new")
 end
 
+Given (/^that I am on the Admins Page$/ ) do
+	visit("http://localhost:3000/admins")
+end
+
 # => Education 								#
-Given (/^that I am on the Education Page$/ ) do
+Given (/^that I am on the New Education Page$/ ) do
 	visit("http://localhost:3000/educations/new")
 end
 
+Given (/^that I am on the Education Page$/ ) do
+	visit("http://localhost:3000/educations")
+end
+
 # => Experience 							#
-Given (/^that I am on the Experience Page$/ ) do
+Given (/^that I am on the New Experience Page$/ ) do
 	visit("http://localhost:3000/experiences/new")
 end
 
+Given (/^that I am on the Experience Page$/ ) do
+	visit("http://localhost:3000/experiences")
+end
+
 # => Extracurriculars 						#
-Given (/^that I am on the Extracurriculars Page$/ ) do
+Given (/^that I am on the New Extracurriculars Page$/ ) do
 	visit("http://localhost:3000/extracurriculars/new")
 end
 
+Given (/^that I am on the Extracurriculars Page$/ ) do
+	visit("http://localhost:3000/extracurriculars")
+end
+
 # => Githubs 								#
-Given (/^that I am on the Githubs Page$/ ) do
+Given (/^that I am on the New Githubs Page$/ ) do
 	visit("http://localhost:3000/githubs/new")
 end
 
+Given (/^that I am on the Githubs Page$/ ) do
+	visit("http://localhost:3000/githubs")
+end
+
 # => LinkedIns 								#
-Given (/^that I am on the LinkedIns Page$/ ) do
+Given (/^that I am on the New LinkedIns Page$/ ) do
 	visit("http://localhost:3000/linkedins/new")
+end
+
+Given (/^that I am on the LinkedIns Page$/ ) do
+	visit("http://localhost:3000/linkedins")
 end
 
 
 ############ When statements ###########
 
 # => Users 				#
+When (/^I click new Users button$/ ) do
+	
+	#page.find_button('New')
+	#click_button "New"
+	find("a[href='/users/new']").click
+	#print page.html
+
+end
+
 When (/^I try to create a new Applicant Profile$/ ) do
 	
 	fill_in 'user_first_name' , :with => "Beyonce"
@@ -94,7 +131,13 @@ When (/^I try to delete an existing Applicant Profile$/ ) do
 	page.driver.browser.switch_to.alert.accept
 end
 
-# => Awards                                 #
+# => Awards                                #
+
+
+When (/^I click new Award button$/ ) do
+	find("a[href='/awards/new']").click
+end
+
 When (/^I try to create a new Award$/ ) do
 
 	fill_in 'award_name' , :with => "Turing"
@@ -122,6 +165,11 @@ When (/^I try to delete an existing Award$/ ) do
 end
 
 # => Admins 								#
+
+When (/^I click new Admin button$/ ) do
+	find("a[href='/admins/new']").click
+end
+
 When (/I try to create a new Admin Profile$/ ) do
 	fill_in 'admin_api_auth_token' , :with => "SADFASF1231231SDFASDF"
 	fill_in 'admin_email' , :with => "email.com"
@@ -150,6 +198,11 @@ When (/^I try to delete an existing Admin Profile$/ ) do
 end
 
 # => Education 								#
+
+When (/^I click new Education button$/ ) do
+	find("a[href='/educations/new']").click
+end
+
 When (/I try to create a new Education Content$/ ) do
 	
 	fill_in 'education_start' , :with => "2016-10-29"
@@ -189,6 +242,11 @@ When (/^I try to delete an existing Education$/ ) do
 end
 
 # => Experience 							#
+
+When (/^I click new Experience button$/ ) do
+	find("a[href='/experiences/new']").click
+end
+
 When (/I try to create a new Experience Content$/ ) do
 	
 	fill_in 'experience_start' , :with => "2016-10-29"
@@ -223,6 +281,11 @@ When (/^I try to delete an existing Experience$/ ) do
 end
 
 # => Extracurriculars 						#
+
+When (/^I click new Extracurricular button$/ ) do
+	find("a[href='/extracurriculars/new']").click
+end
+
 When (/I try to create a new Extracurriculars Content$/ ) do
 	
 	fill_in 'extracurricular_start' , :with => "2016-10-29"
@@ -257,6 +320,11 @@ When (/^I try to delete an existing Extracurriculars$/ ) do
 end
 
 # => Githubs 								#
+
+When (/^I click new Github button$/ ) do
+	find("a[href='/githubs/new']").click
+end
+
 When (/I try to create a new Githubs Content$/ ) do
 	
 	fill_in 'github_path' , :with => "github.com/cis557"
@@ -284,6 +352,11 @@ end
 
 
 # => LinkedIns 								#
+
+When (/^I click new LinkedIn button$/ ) do
+	find("a[href='/linkedins/new']").click
+end
+
 When (/I try to create a new LinkedIns Content$/ ) do
 	
 	fill_in 'linkedin_path' , :with => "linkedin.com/cis557"
@@ -320,6 +393,9 @@ Then (/^I should see the new Applicant Profile page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Applicant form page$/) do
+	assert page.has_content?( "New User" )
+end
 
 Then (/^I should see that the Applicant Profile is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -335,6 +411,10 @@ Then (/^I should see the new Award page$/) do
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
+end
+
+Then (/^I should see the new Award form page$/) do
+	assert page.has_content?( "New Award" )
 end
 
 
@@ -354,6 +434,9 @@ Then (/^I should see the new Admin page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Admin form page$/) do
+	assert page.has_content?( "New Admin" )
+end
 
 Then (/^I should see that the Admin Profile is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -371,6 +454,9 @@ Then (/^I should see the new Education page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Education form page$/) do
+	assert page.has_content?( "New Education" )
+end
 
 Then (/^I should see that the Education Content is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -387,6 +473,9 @@ Then (/^I should see the new Experience page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Experience form page$/) do
+	assert page.has_content?( "New Experience" )
+end
 
 Then (/^I should see that the Experience Content is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -403,6 +492,9 @@ Then (/^I should see the new Extracurriculars page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Extracurricular form page$/) do
+	assert page.has_content?( "New Extracurricular" )
+end
 
 Then (/^I should see that the Extracurriculars Content is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -419,6 +511,9 @@ Then (/^I should see the new Githubs page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new Github form page$/) do
+	assert page.has_content?( "New Github" )
+end
 
 Then (/^I should see that the Githubs Content is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
@@ -436,6 +531,9 @@ Then (/^I should see the new LinkedIns page$/) do
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
+Then (/^I should see the new LinkedIn form page$/) do
+	assert page.has_content?( "New Linkedin" )
+end
 
 Then (/^I should see that the LinkedIns Content is deleted$/) do
 	assert page.has_content?( "User was successfully destroyed" )
