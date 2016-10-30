@@ -12,4 +12,5 @@
 
 class Github < ActiveRecord::Base
   belongs_to :user
+  validates :path, :presence => true
 end
