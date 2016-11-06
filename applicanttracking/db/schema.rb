@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106215449) do
+ActiveRecord::Schema.define(version: 20161106233653) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "api_auth_token"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20161106215449) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "text_answer"
+    t.string   "data_type"
+    t.binary   "video_answer"
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
 
   create_table "awards", force: :cascade do |t|
     t.string   "name"
@@ -98,6 +111,13 @@ ActiveRecord::Schema.define(version: 20161106215449) do
 
   add_index "linkedins", ["user_id"], name: "index_linkedins_on_user_id"
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "question_type"
+    t.string   "prompt"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -112,6 +132,7 @@ ActiveRecord::Schema.define(version: 20161106215449) do
     t.string   "zipcode"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.boolean  "submitted"
   end
 
 end

@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: answers
+#
+#  id           :integer          not null, primary key
+#  text_answer  :text
+#  data_type    :string
+#  video_answer :binary
+#  question_id  :integer
+#  user_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text_answer: MyText
+  data_type: MyString
+  video_answer: 
+  question_id: 
+  user_id: 
+
+two:
+  text_answer: MyText
+  data_type: MyString
+  video_answer: 
+  question_id: 
+  user_id: 

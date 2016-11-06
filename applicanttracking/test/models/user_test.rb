@@ -16,6 +16,7 @@
 #  zipcode        :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  submitted      :boolean
 #
 
 require 'test_helper'

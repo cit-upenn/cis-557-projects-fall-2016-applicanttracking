@@ -26,6 +26,8 @@
   <dd><%= @user.country %></dd>
   <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
   <dd><%= @user.zipcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:submitted) %>:</strong></dt>
+  <dd><%= @user.submitted %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

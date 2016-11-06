@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :dob, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :dob, :class => 'form-control' %>
+      <%= f.date_select :dob, :class => 'form-control' %>
     </div>
     <%=f.error_span(:dob) %>
   </div>
@@ -91,6 +91,13 @@
       <%= f.text_field :zipcode, :class => 'form-control' %>
     </div>
     <%=f.error_span(:zipcode) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :submitted, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :submitted, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:submitted) %>
   </div>
 
   <div class="form-group">

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
   resources :users
   resources :admins
   resources :linkedins
@@ -8,6 +10,9 @@ Rails.application.routes.draw do
   resources :educations
   resources :experiences
   resources :users
+
+  get "questions/prompt/:question_type", to: "questions#prompt"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

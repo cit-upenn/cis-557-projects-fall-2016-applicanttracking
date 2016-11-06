@@ -16,9 +16,16 @@
 #  zipcode        :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  submitted      :boolean
 #
 
 class User < ActiveRecord::Base
+    has_many :answers
+    has_many :awards
+    has_many :educations
+    has_many :experiences
+    has_many :extracurriculars
+
 	validates :first_name, :presence => true
     validates :last_name, :presence => true
 	validates :dob, :presence => true
