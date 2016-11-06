@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:start) %></th>
-      <th><%= model_class.human_attribute_name(:end) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
       <th><%= model_class.human_attribute_name(:current) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:company) %></th>
@@ -22,7 +22,7 @@
       <tr>
         <td><%= link_to experience.id, experience_path(experience) %></td>
         <td><%= experience.start %></td>
-        <td><%= experience.end %></td>
+        <td><%= experience.end_date %></td>
         <td><%= experience.current %></td>
         <td><%= experience.title %></td>
         <td><%= experience.company %></td>

@@ -70,9 +70,9 @@ class EducationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_params
       if request.format == 'application/json'
-        params.permit(:start, :end, :current, :degree, :school, :gpa, :major, :minor, :user_id)
+        params.permit(:start, :end_date, :current, :degree, :school, :gpa, :major, :minor, :user_id)
       else
-        params.require(:education).permit(:start, :end, :current, :degree, :school, :gpa, :major, :minor, :user_id)
+        params.require(:education).permit(:start, :end_date, :current, :degree, :school, :gpa, :major, :minor, :user_id)
       end
     end
 end

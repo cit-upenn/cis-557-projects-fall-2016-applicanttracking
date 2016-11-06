@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029201201) do
+ActiveRecord::Schema.define(version: 20161106215449) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "api_auth_token"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20161029201201) do
 
   create_table "educations", force: :cascade do |t|
     t.date     "start"
-    t.date     "end"
     t.boolean  "current"
     t.string   "degree"
     t.string   "school"
@@ -46,13 +45,13 @@ ActiveRecord::Schema.define(version: 20161029201201) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "end_date"
   end
 
   add_index "educations", ["user_id"], name: "index_educations_on_user_id"
 
   create_table "experiences", force: :cascade do |t|
     t.date     "start"
-    t.date     "end"
     t.boolean  "current"
     t.string   "title"
     t.string   "company"
@@ -60,13 +59,13 @@ ActiveRecord::Schema.define(version: 20161029201201) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.date     "end_date"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
 
   create_table "extracurriculars", force: :cascade do |t|
     t.date     "start"
-    t.date     "end"
     t.string   "organization"
     t.boolean  "current"
     t.string   "position"
@@ -74,6 +73,7 @@ ActiveRecord::Schema.define(version: 20161029201201) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.date     "end_date"
   end
 
   add_index "extracurriculars", ["user_id"], name: "index_extracurriculars_on_user_id"

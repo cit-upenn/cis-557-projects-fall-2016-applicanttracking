@@ -70,9 +70,9 @@ class ExperiencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
       if request.format == 'application/json'
-        params.permit(:start, :end, :current, :title, :company, :description, :user_id)
+        params.permit(:start, :end_date, :current, :title, :company, :description, :user_id)
       else
-        params.require(:experience).permit(:start, :end, :current, :title, :company, :description, :user_id)
+        params.require(:experience).permit(:start, :end_date, :current, :title, :company, :description, :user_id)
       end
     end
 end

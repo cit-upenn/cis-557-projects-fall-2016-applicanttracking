@@ -15,4 +15,7 @@ class Award < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :presence => true
+  validates :user, presence: {message: "This user doesn't exist"}
+  validates :description, :presence => true
+  validates :date, :presence => true
 end

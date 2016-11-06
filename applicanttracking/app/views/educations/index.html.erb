@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:start) %></th>
-      <th><%= model_class.human_attribute_name(:end) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
       <th><%= model_class.human_attribute_name(:current) %></th>
       <th><%= model_class.human_attribute_name(:degree) %></th>
       <th><%= model_class.human_attribute_name(:school) %></th>
@@ -24,7 +24,7 @@
       <tr>
         <td><%= link_to education.id, education_path(education) %></td>
         <td><%= education.start %></td>
-        <td><%= education.end %></td>
+        <td><%= education.end_date %></td>
         <td><%= education.current %></td>
         <td><%= education.degree %></td>
         <td><%= education.school %></td>

@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:start) %></th>
-      <th><%= model_class.human_attribute_name(:end) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
       <th><%= model_class.human_attribute_name(:organization) %></th>
       <th><%= model_class.human_attribute_name(:current) %></th>
       <th><%= model_class.human_attribute_name(:position) %></th>
@@ -22,7 +22,7 @@
       <tr>
         <td><%= link_to extracurricular.id, extracurricular_path(extracurricular) %></td>
         <td><%= extracurricular.start %></td>
-        <td><%= extracurricular.end %></td>
+        <td><%= extracurricular.end_date %></td>
         <td><%= extracurricular.organization %></td>
         <td><%= extracurricular.current %></td>
         <td><%= extracurricular.position %></td>
