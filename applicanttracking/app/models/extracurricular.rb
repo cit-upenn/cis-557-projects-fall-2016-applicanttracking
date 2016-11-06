@@ -16,4 +16,6 @@
 
 class Extracurricular < ActiveRecord::Base
   belongs_to :user
+
+  validates :current, :presence => true
 end
