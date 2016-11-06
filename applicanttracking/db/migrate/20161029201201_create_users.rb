@@ -1,9 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-
-    # HACKY !!!! drop the table and just re-create the table
-    drop_table :users
-
     create_table :users do |t|
       t.string :first_name
       t.string :middle_name
