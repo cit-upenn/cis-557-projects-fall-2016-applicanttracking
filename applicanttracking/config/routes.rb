@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users
 
   get "questions/prompt/:question_type", to: "questions#prompt"
+  get "/", to: "users#login"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
