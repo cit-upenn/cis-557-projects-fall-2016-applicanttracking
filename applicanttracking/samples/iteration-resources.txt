@@ -1,0 +1,4 @@
+iteration-resources:
+
+   github: https://github.com/cit-upenn/cis-557-projects-fall-2016-applicanttracking
+   Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1901711
