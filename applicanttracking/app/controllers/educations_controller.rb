@@ -32,7 +32,7 @@ class EducationsController < ApplicationController
         format.json { render :show, status: :created, location: @education }
       else
         format.html { render :new }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @education.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class EducationsController < ApplicationController
         format.json { render :show, status: :ok, location: @education }
       else
         format.html { render :edit }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @education.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,11 @@ class EducationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_education
-      @education = Education.find(params[:id])
+      if Education.exists?(params[:id])
+        @education = Education.find(params[:id])
+      else
+        render json: {:errors => "Education doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

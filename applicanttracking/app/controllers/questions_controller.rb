@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/prompt/:question_type
   def prompt
-    render json: Question.where(question_type: question_params['question_type'])
+    render json: Question.where(question_type: question_params[:question_type])
   end
 
   # GET /questions/new

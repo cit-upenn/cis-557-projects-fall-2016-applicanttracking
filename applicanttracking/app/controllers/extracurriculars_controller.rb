@@ -32,7 +32,7 @@ class ExtracurricularsController < ApplicationController
         format.json { render :show, status: :created, location: @extracurricular }
       else
         format.html { render :new }
-        format.json { render json: @extracurricular.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @extracurricular.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class ExtracurricularsController < ApplicationController
         format.json { render :show, status: :ok, location: @extracurricular }
       else
         format.html { render :edit }
-        format.json { render json: @extracurricular.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @extracurricular.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,11 @@ class ExtracurricularsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_extracurricular
-      @extracurricular = Extracurricular.find(params[:id])
+      if Extracurricular.exists?(params[:id])
+        @extracurricular = Extracurricular.find(params[:id])
+      else
+        render json: {:errors => "Extracurricular doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

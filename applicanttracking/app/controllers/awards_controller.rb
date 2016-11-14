@@ -32,7 +32,7 @@ class AwardsController < ApplicationController
         format.json { render :show, status: :created, location: @award }
       else
         format.html { render :new }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @award.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class AwardsController < ApplicationController
         format.json { render :show, status: :ok, location: @award }
       else
         format.html { render :edit }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @award.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +64,11 @@ class AwardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_award
-      @award = Award.find(params[:id])
+      if Award.exists?(params[:id])
+        @award = Award.find(params[:id])
+      else
+        render json: {:errors => "Award doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
