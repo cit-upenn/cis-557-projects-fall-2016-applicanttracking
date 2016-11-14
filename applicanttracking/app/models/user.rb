@@ -36,4 +36,5 @@ class User < ActiveRecord::Base
     validates :state, :presence => true
     validates :country, :presence => true
     validates :zipcode, :presence => true
+    validates :submitted, :presence => true
 end
