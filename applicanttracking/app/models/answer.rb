@@ -16,6 +16,8 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
 
+  validate :answer_present
+
   validates :data_type, :presence => true
   validates :user, presence: {message: "This user doesn't exist"}
   validates :question, presence: {message: "This question doesn't exist"}

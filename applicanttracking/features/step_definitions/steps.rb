@@ -2,6 +2,32 @@
 
 # This is the step definitions file for Cucumber testing
 
+############  Creating dummy database records ############
+
+Given (/^a Dummy User for Testing$/) do
+	user = User.create(first_name: "David", 
+					   last_name: "Camp", 
+					   phone: 3017429005, 
+					   dob: "2016-11-14" ,
+		 			   email: "test@gmail.com",
+		 			   street_address: "1234 test dr.",
+		 			   city: "Philadelphia",
+		 			   state: "PA", 
+		 			   country: "US",
+		 			   zipcode: "12345",
+		 			   created_at: "2016-11-14 02:34:39",
+		 			   updated_at: "2016-11-14 02:34:39",
+		 			   submitted: false
+	                   ) 
+end
+
+Given (/^a Dummy Question for Testing$/) do
+	question = Question.create(prompt: "What is your occupation?", 
+							   question_type: "personal"	
+	                   			) 
+end
+
+
 ############ Given statements ###########
 
 # => Users        							#
@@ -77,6 +103,25 @@ Given (/^that I am on the LinkedIns Page$/ ) do
 	visit("http://localhost:3000/linkedins")
 end
 
+# => Questions 								#
+Given (/^that I am on the new Questions Page$/ ) do
+	visit("http://localhost:3000/questions/new")
+end
+
+Given (/^that I am on the Questions Page$/ ) do
+	visit("http://localhost:3000/questions")
+end
+
+# => Answers 								#
+Given (/^that I am on the new Answers Page$/ ) do
+	visit("http://localhost:3000/answers/new")
+end
+
+Given (/^that I am on the Answers Page$/ ) do
+	visit("http://localhost:3000/answers")
+end
+
+
 
 ############ When statements ###########
 
@@ -95,7 +140,12 @@ When (/^I try to create a new Applicant Profile$/ ) do
 	fill_in 'user_first_name' , :with => "Beyonce"
 	fill_in 'user_middle_name', :with => "Giselle"
 	fill_in 'user_last_name', :with => "Knowles-Carter"
-	fill_in 'user_dob', :with => "1981-9-4"
+
+    # selecting drop down menu
+	find('#user_dob_1i').find(:xpath, "option[@value=2013]").select_option
+	find('#user_dob_2i').find(:xpath, "option[@value=3]").select_option
+	find('#user_dob_3i').find(:xpath, "option[@value=20]").select_option
+
 	fill_in 'user_phone', :with => "3017429005"
 	fill_in 'user_email', :with => "stevenhw@seas.upenn.edu"
 	fill_in 'user_street_address', :with => "123 Music St."
@@ -113,7 +163,11 @@ When (/^I try to create a new Applicant Profile without name field$/ ) do
 	
 	fill_in 'user_middle_name', :with => "Giselle"
 	fill_in 'user_last_name', :with => "Knowles-Carter"
-	fill_in 'user_dob', :with => "1981-9-4"
+	
+	find('#user_dob_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#user_dob_2i').find(:xpath, "option[@value=6]").select_option
+	find('#user_dob_3i').find(:xpath, "option[@value=25]").select_option
+
 	fill_in 'user_phone', :with => "3017429005"
 	fill_in 'user_email', :with => "stevenhw@seas.upenn.edu"
 	fill_in 'user_street_address', :with => "123 Music St."
@@ -142,7 +196,10 @@ When (/^I try to create a new Award$/ ) do
 
 	fill_in 'award_name' , :with => "Turing"
 	fill_in 'award_description' , :with => "Prestigious CS award"
-	fill_in 'award_date' , :with => "2005-10-2"
+	find('#award_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#award_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#award_date_3i').find(:xpath, "option[@value=25]").select_option
+
 	fill_in 'award_user_id' , :with => "1"
 
 	click_button "Create Award"
@@ -152,7 +209,11 @@ end
 When (/^I try to create a new Award Without name field$/ ) do
 
 	fill_in 'award_description' , :with => "Prestigious CS award"
-	fill_in 'award_date' , :with => "2005-10-2"
+
+	find('#award_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#award_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#award_date_3i').find(:xpath, "option[@value=25]").select_option
+
 	fill_in 'award_user_id' , :with => "1"
 
 	click_button "Create Award"
@@ -205,30 +266,44 @@ end
 
 When (/I try to create a new Education Content$/ ) do
 	
-	fill_in 'education_start' , :with => "2016-10-29"
-	fill_in 'education_end' , :with => "2016-10-30"
-	fill_in 'education_current' , :with => "true"
+	#fill_in 'education_start' , :with => "2016-10-29"
+	#fill_in 'education_end' , :with => "2016-10-30"
+
+	find('#education_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#education_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_start_3i').find(:xpath, "option[@value=24]").select_option
+
+	find('#education_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#education_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
 	fill_in 'education_degree' , :with => "MA"
 	fill_in 'education_school' , :with => "UPenn"
 	fill_in 'education_gpa' , :with => "4.0"
 	fill_in 'education_major' , :with => "Computer Science"
-	fill_in 'education_minor' , :with => "Math"
 	fill_in 'education_user_id' , :with => "1"
 
 	click_button "Create Education"
 
 end
 
-When (/I try to create a new Education Content without current field$/ ) do
+When (/I try to create a new Education Content without gpa field$/ ) do
 	
-	fill_in 'education_start' , :with => "2016-10-29"
-	fill_in 'education_end' , :with => "2016-10-30"
+	# fill_in 'education_start' , :with => "2016-10-29"
+	# fill_in 'education_end' , :with => "2016-10-30"
+
+	find('#education_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#education_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#education_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#education_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_end_date_3i').find(:xpath, "option[@value=25]").select_option
 	
 	fill_in 'education_degree' , :with => "MA"
 	fill_in 'education_school' , :with => "UPenn"
-	fill_in 'education_gpa' , :with => "4.0"
+	# fill_in 'education_gpa' , :with => "4.0"
 	fill_in 'education_major' , :with => "Computer Science"
-	fill_in 'education_minor' , :with => "Math"
 	fill_in 'education_user_id' , :with => "1"
 
 	click_button "Create Education"
@@ -249,9 +324,20 @@ end
 
 When (/I try to create a new Experience Content$/ ) do
 	
-	fill_in 'experience_start' , :with => "2016-10-29"
-	fill_in 'experience_end' , :with => "2016-10-30"
-	fill_in 'experience_current' , :with => "true"
+	# fill_in 'experience_start' , :with => "2016-10-29"
+	# fill_in 'experience_end' , :with => "2016-10-30"
+
+	find('#experience_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_start_3i').find(:xpath, "option[@value=24]").select_option
+
+	find('#experience_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+
+	# fill_in 'experience_current' , :with => "true"
+	check('experience_current')
 	fill_in 'experience_title' , :with => "Software Engineer"
 	fill_in 'experience_company' , :with => "Microsoft"
 	fill_in 'experience_description' , :with => "Do CS stuff"
@@ -261,13 +347,22 @@ When (/I try to create a new Experience Content$/ ) do
 
 end
 
-When (/Create a new Experience Content without current field$/ ) do
+When (/Create a new Experience Content without company field$/ ) do
 	
-	fill_in 'experience_start' , :with => "2016-10-29"
-	fill_in 'experience_end' , :with => "2016-10-30"
+	# fill_in 'experience_start' , :with => "2016-10-29"
+	# fill_in 'experience_end' , :with => "2016-10-30"
+
+	find('#experience_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#experience_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
 	
 	fill_in 'experience_title' , :with => "Software Engineer"
-	fill_in 'experience_company' , :with => "Microsoft"
+	#fill_in 'experience_company' , :with => "Microsoft"
 	fill_in 'experience_description' , :with => "Do CS stuff"
 	fill_in 'experience_user_id' , :with => "1"
 
@@ -288,10 +383,22 @@ end
 
 When (/I try to create a new Extracurriculars Content$/ ) do
 	
-	fill_in 'extracurricular_start' , :with => "2016-10-29"
-	fill_in 'extracurricular_end' , :with => "2016-10-30"
+	# fill_in 'extracurricular_start' , :with => "2016-10-29"
+	# fill_in 'extracurricular_end' , :with => "2016-10-30"
+
+	find('#extracurricular_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_start_3i').find(:xpath, "option[@value=24]").select_option
+
+	find('#extracurricular_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+
+
 	fill_in 'extracurricular_organization' , :with => "Microhard"
-	fill_in 'extracurricular_current' , :with => "true"
+	# fill_in 'extracurricular_current' , :with => "true"
+	check('extracurricular_current')
 	fill_in 'extracurricular_position' , :with => "Advisor"
 	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
 	fill_in 'extracurricular_user_id' , :with => "1"
@@ -300,13 +407,21 @@ When (/I try to create a new Extracurriculars Content$/ ) do
 
 end
 
-When (/I try to create a new Extracurriculars Content without current field$/ ) do
+When (/I try to create a new Extracurriculars Content without position field$/ ) do
 	
-	fill_in 'extracurricular_start' , :with => "2016-10-29"
-	fill_in 'extracurricular_end' , :with => "2016-10-30"
+	# fill_in 'extracurricular_start' , :with => "2016-10-29"
+	# fill_in 'extracurricular_end' , :with => "2016-10-30"
+	find('#extracurricular_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#extracurricular_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
 	fill_in 'extracurricular_organization' , :with => "Microhard"
 	
-	fill_in 'extracurricular_position' , :with => "Advisor"
+	#fill_in 'extracurricular_position' , :with => "Advisor"
 	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
 	fill_in 'extracurricular_user_id' , :with => "1"
 
@@ -380,6 +495,66 @@ end
 When (/^I try to delete an existing LinkedIns$/ ) do
 	click_button "Delete"
 end
+
+
+# => questions 								#
+
+When (/^I click new Question button$/ ) do
+	find("a[href='/questions/new']").click
+end
+
+When (/I try to create a new Questions Content$/ ) do
+	
+	fill_in 'question_question_type' , :with => "Personal"
+	fill_in 'question_prompt' , :with => "Sparta, what is you occupation?"
+	
+	click_button "Create Question"
+
+end
+
+When (/I try to create a new Questions Content without prompt field$/ ) do
+	
+	fill_in 'question_question_type' , :with => "Personal"
+	
+	click_button "Create Question"
+
+end
+
+
+# => Answers 								#
+
+When (/^I click new Answer button$/ ) do
+	find("a[href='/answers/new']").click
+end
+
+When (/I try to create a new Answers Content$/ ) do
+	
+	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	fill_in 'answer_data_type' , :with => "text"
+	#fill_in 'answer_video_answer' , :with => "1"
+	fill_in 'answer_question_id' , :with => "1"
+	fill_in 'answer_user_id' , :with => "1"
+
+
+	click_button "Create Answer"
+
+end
+
+When (/I try to create a new Answers Content without answer field$/ ) do
+	
+	#fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	fill_in 'answer_data_type' , :with => "text"
+	#fill_in 'answer_video_answer' , :with => "1"
+	fill_in 'answer_question_id' , :with => "1"
+	fill_in 'answer_user_id' , :with => "1"
+
+
+	click_button "Create Answer"
+
+end
+
+
+
 
 
 
@@ -541,6 +716,30 @@ Then (/^I should see that the LinkedIns Content is deleted$/) do
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
+
+# => Question 								#
+
+Then (/^I should see the new Question form page$/) do
+	assert page.has_content?( "New Question" )
+end
+
+Then (/^I should see the new Questions page$/) do
+	assert page.has_content?( "Question was successfully created" )
+
+end
+
+# => Answer 								#
+
+Then (/^I should see the new Answer form page$/) do
+	assert page.has_content?( "New Answer" )
+end
+
+Then (/^I should see the new Answers page$/) do
+	assert page.has_content?( "Answer was successfully created" )
+
+end
+
+
 
 # => General Error message #
 Then (/^I should see an Error$/) do
