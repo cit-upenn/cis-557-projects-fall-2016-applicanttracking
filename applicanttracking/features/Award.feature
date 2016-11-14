@@ -4,6 +4,10 @@ Feature: Awards page
 	So that I can keep track Award related information
 	I want to create new Award Content
 
+	Background:
+		Given a Dummy User for Testing
+
+
 	Scenario: Click a new Award button 
 		Given that I am on the Awards Page
 		When I click new Award button 
