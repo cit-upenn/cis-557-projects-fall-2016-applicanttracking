@@ -64,7 +64,11 @@ class ExperiencesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
-      @experience = Experience.find(params[:id])
+      if Experience.exists?(params[:id])
+        @experience = Experience.find(params[:id])
+      else
+        render json: {:errors => "Experience doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
