@@ -36,7 +36,7 @@ class UsersController < ApplicationController
         format.json { render json: @user, status: :created }
       else
         format.html { render :new }
-        format.json { render json: @user.errors, status: :bad_request }
+        format.json { render json: {:errors => @user.errors}, status: :bad_request }
       end
     end
   end
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
         format.json { render json: @user, status: :ok }
       else
         format.html { render :edit }
-        format.json { render json: @user.errors, status: :bad_request }
+        format.json { render json: {:errors => @user.errors}, status: :bad_request }
       end
     end
   end

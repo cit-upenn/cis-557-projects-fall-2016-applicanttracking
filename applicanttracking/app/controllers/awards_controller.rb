@@ -32,7 +32,7 @@ class AwardsController < ApplicationController
         format.json { render :show, status: :created, location: @award }
       else
         format.html { render :new }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @award.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class AwardsController < ApplicationController
         format.json { render :show, status: :ok, location: @award }
       else
         format.html { render :edit }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @award.errors}, status: :unprocessable_entity }
       end
     end
   end

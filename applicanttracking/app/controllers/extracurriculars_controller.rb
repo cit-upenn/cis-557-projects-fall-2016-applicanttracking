@@ -32,7 +32,7 @@ class ExtracurricularsController < ApplicationController
         format.json { render :show, status: :created, location: @extracurricular }
       else
         format.html { render :new }
-        format.json { render json: @extracurricular.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @extracurricular.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class ExtracurricularsController < ApplicationController
         format.json { render :show, status: :ok, location: @extracurricular }
       else
         format.html { render :edit }
-        format.json { render json: @extracurricular.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @extracurricular.errors}, status: :unprocessable_entity }
       end
     end
   end

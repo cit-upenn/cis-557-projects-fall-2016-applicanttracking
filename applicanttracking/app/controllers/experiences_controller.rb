@@ -32,7 +32,7 @@ class ExperiencesController < ApplicationController
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @experience.errors}, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,7 @@ class ExperiencesController < ApplicationController
         format.json { render :show, status: :ok, location: @experience }
       else
         format.html { render :edit }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        format.json { render json: {:errors => @experience.errors}, status: :unprocessable_entity }
       end
     end
   end
