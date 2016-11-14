@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/prompt/:question_type
   def prompt
-    render json: Question.where(question_type: question_params['question_type'])
+    render json: Question.where(question_type: question_params[:question_type])
   end
 
   # GET /questions/new
@@ -77,7 +77,7 @@ class QuestionsController < ApplicationController
       if request.format == 'application/json'
         params.permit(:question_type, :prompt)
       else
-        params.require(:question).permit(:question_type, :prompt, :data_type, :user_id, :question_id)
+        params.permit(:question_type, :prompt, :data_type, :user_id, :question_id)
       end
     end
 end
