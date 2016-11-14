@@ -17,7 +17,7 @@ Given (/^a Dummy User for Testing$/) do
 		 			   zipcode: "12345",
 		 			   created_at: "2016-11-14 02:34:39",
 		 			   updated_at: "2016-11-14 02:34:39",
-		 			   submitted: false
+		 			   submitted: true
 	                   ) 
 end
 
@@ -153,6 +153,8 @@ When (/^I try to create a new Applicant Profile$/ ) do
 	fill_in 'user_state', :with => "CA"
 	fill_in 'user_country', :with => "USA"
 	fill_in 'user_zipcode', :with => "20854"
+
+	check('user_submitted')
 	
 	click_button "Create User"
 
