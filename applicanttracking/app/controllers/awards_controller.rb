@@ -21,6 +21,11 @@ class AwardsController < ApplicationController
   def edit
   end
 
+  def user
+    @awards = Award.where(user: params[:id])
+    render :index
+  end
+
   # POST /awards
   # POST /awards.json
   def create

@@ -21,6 +21,11 @@ class ExtracurricularsController < ApplicationController
   def edit
   end
 
+  def user
+    @extracurriculars = Extracurricular.where(user: params[:id])
+    render :index
+  end
+
   # POST /extracurriculars
   # POST /extracurriculars.json
   def create

@@ -21,6 +21,11 @@ class EducationsController < ApplicationController
   def edit
   end
 
+  def user
+    @educations = Education.where(user: params[:id])
+    render :index
+  end
+
   # POST /educations
   # POST /educations.json
   def create

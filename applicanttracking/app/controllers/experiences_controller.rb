@@ -21,6 +21,11 @@ class ExperiencesController < ApplicationController
   def edit
   end
 
+  def user
+    @experiences = Experience.where(user: params[:id])
+    render :index
+  end
+
   # POST /experiences
   # POST /experiences.json
   def create
