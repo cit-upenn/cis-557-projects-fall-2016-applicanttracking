@@ -98,8 +98,7 @@
 #
 
 Rails.application.routes.draw do
-  devise_for :user_credentials
-
+  devise_for :user_credentials 
 
   resources :answers
 
@@ -109,6 +108,7 @@ Rails.application.routes.draw do
     end
   end
 
+  
   resources :users
   resources :admins
   resources :linkedins
@@ -138,9 +138,13 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users
 
-  # root 'users#login'
+  root to: 'user_credentials#sign_in'
+
+
+  #devise_scope :user_credentials do 
+  #end
+  #root to: 'devise/sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
