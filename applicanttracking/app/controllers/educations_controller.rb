@@ -1,4 +1,5 @@
 class EducationsController < ApplicationController
+  before_action :authenticate_user_credential!
   before_action :set_education, only: [:show, :edit, :update, :destroy]
 
   # GET /educations

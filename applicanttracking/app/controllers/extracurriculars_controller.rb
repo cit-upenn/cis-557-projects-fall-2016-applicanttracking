@@ -1,4 +1,6 @@
 class ExtracurricularsController < ApplicationController
+
+  before_action :authenticate_user_credential!
   before_action :set_extracurricular, only: [:show, :edit, :update, :destroy]
 
   # GET /extracurriculars

@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+  before_action :authenticate_user_credential!
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   # GET /experiences
