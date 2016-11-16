@@ -138,9 +138,9 @@ Rails.application.routes.draw do
     end
   end
   
-
-  root to: 'user_credentials#sign_in'
-
+  # authenticate do
+  #   root to: 'devise/sessions#new'
+  # end
 
   #devise_scope :user_credentials do 
   #end
