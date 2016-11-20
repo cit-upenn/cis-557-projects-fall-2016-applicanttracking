@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController 
-  before_action :authenticate_user_credential!
+  #before_action :authenticate_user_credential!
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
   # GET /admins

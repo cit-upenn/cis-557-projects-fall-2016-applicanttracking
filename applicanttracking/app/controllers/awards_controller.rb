@@ -1,5 +1,5 @@
 class AwardsController < ApplicationController
-  before_action :authenticate_user_credential!
+  #before_action :authenticate_user_credential!
   before_action :set_award, only: [:show, :edit, :update, :destroy]
 
   # GET /awards
