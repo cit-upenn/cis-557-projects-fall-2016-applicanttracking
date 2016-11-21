@@ -13,4 +13,5 @@
 class Linkedin < ActiveRecord::Base
   belongs_to :user
   validates :path, :presence => true
+  validates :user, presence: {message: "This user doesn't exist"}
 end
