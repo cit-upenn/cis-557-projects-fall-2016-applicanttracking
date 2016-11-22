@@ -1,5 +1,5 @@
 class GithubsController < ApplicationController
-  before_action :authenticate_user_credential!
+  #before_action :authenticate_user_credential!
   before_action :set_github, only: [:show, :edit, :update, :destroy]
 
   # GET /githubs

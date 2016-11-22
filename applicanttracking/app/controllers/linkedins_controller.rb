@@ -1,5 +1,5 @@
 class LinkedinsController < ApplicationController
-  before_action :authenticate_user_credential! 
+  #before_action :authenticate_user_credential! 
   before_action :set_linkedin, only: [:show, :edit, :update, :destroy]
 
   # GET /linkedins
