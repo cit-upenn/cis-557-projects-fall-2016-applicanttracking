@@ -8,12 +8,14 @@
   <dd><%= @answer.text_answer %></dd>
   <dt><strong><%= model_class.human_attribute_name(:data_type) %>:</strong></dt>
   <dd><%= @answer.data_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:video_answer) %>:</strong></dt>
-  <dd><%= @answer.video_answer %></dd>
   <dt><strong><%= model_class.human_attribute_name(:question_id) %>:</strong></dt>
   <dd><%= @answer.question_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
   <dd><%= @answer.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:video) %>:</strong></dt>
+  <% if @answer.video.present? %>
+    <dd><%= link_to "video", @answer.video.url %></dd>
+  <% end %>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

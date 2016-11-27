@@ -100,7 +100,11 @@
 Rails.application.routes.draw do
   devise_for :user_credentials 
 
-  resources :answers
+  resources :answers do
+    member do
+      post 'upload' => 'answers#upload'
+    end
+  end
 
   resources :questions do
     collection do

@@ -1,11 +1,21 @@
 class AnswersController < ApplicationController
   #before_action :authenticate_user_credential!
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy, :upload]
+  skip_before_filter :verify_authenticity_token
 
   # GET /answers
   # GET /answers.json
   def index
     @answers = Answer.all
+  end
+
+  # POST /upload
+  def upload
+    if @answer.update({"video" => params["video"]})
+      render json: @answer, status: :ok
+    else
+      render json: @answer.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /answers/1
@@ -65,15 +75,19 @@ class AnswersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_answer
-      @answer = Answer.find(params[:id])
+      if Answer.exists?(params[:id])
+        @answer = Answer.find(params[:id])
+      else
+        render json: {:errors => "Answer doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
       if request.format == 'application/json'
-        params.permit(:text_answer, :data_type, :video_answer, :question_id, :user_id)
+        params.permit(:text_answer, :data_type, :question_id, :user_id, :video)
       else
-        params.require(:answer).permit(:text_answer, :data_type, :video_answer, :question_id, :user_id)
+        params.require(:answer).permit(:text_answer, :data_type, :question_id, :user_id, :video)
       end
     end
 end
