@@ -100,29 +100,11 @@
 Rails.application.routes.draw do
   devise_for :user_credentials 
 
-  if Rails.configuration.enable_devise == true
-    puts "***CONFIG >>>> DEVISE ENABLED"
-    authenticate do
-      resources :users
-      resources :admins
-      resources :linkedins
-      resources :githubs
-      resources :answers
-      resources :questions
-      resources :awards
-      resources :extracurriculars
-      resources :educations
-      resources :experiences
+  resources :answers do
+    member do
+      post 'upload' => 'answers#upload'
     end
-  else 
-    puts "***CONFIG >>>> DEVISE DISABLED"
-    resources :users
-    resources :admins
-    resources :linkedins
-    resources :githubs
   end
- 
-  resources :answers
 
   resources :questions do
     collection do

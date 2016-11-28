@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:text_answer) %></th>
       <th><%= model_class.human_attribute_name(:data_type) %></th>
-      <th><%= model_class.human_attribute_name(:video_answer) %></th>
+      <th><%= model_class.human_attribute_name(:video) %></th>
       <th><%= model_class.human_attribute_name(:question_id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -21,7 +21,11 @@
         <td><%= link_to answer.id, answer_path(answer) %></td>
         <td><%= answer.text_answer %></td>
         <td><%= answer.data_type %></td>
-        <td><%= answer.video_answer %></td>
+        <% if answer.video.present? %>
+          <td><%= answer.video %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <td><%= answer.question_id %></td>
         <td><%= answer.user_id %></td>
         <td><%=l answer.created_at %></td>

@@ -30,13 +30,6 @@
     <%=f.error_span(:data_type) %>
   </div>
   <div class="form-group">
-    <%= f.label :video_answer, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :video_answer, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:video_answer) %>
-  </div>
-  <div class="form-group">
     <%= f.label :question_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :question_id, :class => 'form-control' %>
@@ -47,6 +40,13 @@
     <%= f.label :user_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:user_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :video, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.file_field :video %>
     </div>
     <%=f.error_span(:user_id) %>
   </div>

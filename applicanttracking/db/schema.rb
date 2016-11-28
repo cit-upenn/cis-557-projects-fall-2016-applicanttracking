@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116014327) do
+ActiveRecord::Schema.define(version: 20161127025756) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "api_auth_token"
@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 20161116014327) do
   create_table "answers", force: :cascade do |t|
     t.text     "text_answer"
     t.string   "data_type"
-    t.binary   "video_answer"
     t.integer  "question_id"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
