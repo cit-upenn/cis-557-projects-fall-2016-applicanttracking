@@ -6,7 +6,7 @@ Feature: LinkedIns page
 
 	Background:
 		Given a Dummy User for Testing
-		Given I need to Sign in
+		Given I need to Sign in as User
 	
 	Scenario: Click a new LinkedIn button 
 		Given that I am on the LinkedIns Page

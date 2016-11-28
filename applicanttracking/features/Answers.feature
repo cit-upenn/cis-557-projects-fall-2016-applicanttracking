@@ -7,7 +7,7 @@ Feature: Answers page
 	Background:
 		Given a Dummy User for Testing
 		Given a Dummy Question for Testing
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 
 	Scenario: Click a new Answers button 

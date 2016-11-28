@@ -5,7 +5,7 @@ Feature: Questions page
 	I want to create new Question Content
 
 	Background:
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 	Scenario: Click a new Questions button 
 		Given that I am on the Questions Page

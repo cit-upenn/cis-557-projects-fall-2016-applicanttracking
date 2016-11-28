@@ -5,7 +5,7 @@ Feature: Applicant Profile page
 	I want to create a new Applicant Profile
 
 	Background:
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 	Scenario: Click a new Applicant button 
 		Given that I am on the Users Page

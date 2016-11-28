@@ -5,7 +5,7 @@ Feature: Githubs page
 	I want to create new Githubs Content
 
 	Background:
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 	Scenario: Click a new Github button 
 		Given that I am on the Githubs Page

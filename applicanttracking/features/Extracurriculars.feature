@@ -6,7 +6,7 @@ Feature: Extracurriculars page
 
 	Background:
 		Given a Dummy User for Testing
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 	Scenario: Click a new Extracurricular button 
 		Given that I am on the Extracurriculars Page

@@ -27,7 +27,7 @@ Given (/^a Dummy Question for Testing$/) do
 	                   			) 
 end
 
-Given (/^I need to Sign in$/) do
+Given (/^I need to Sign in as User$/) do
 	email = 'test@email.com'
 	password = '123456'
 
@@ -807,4 +807,9 @@ end
 # => General Error message #
 Then (/^I should see an Error$/) do
 	 assert page.has_css?('div.field_with_errors')
+end
+
+# => General Authentication message #
+Then (/^I should see an Admin Login Page$/) do
+	 assert page.has_content?('You need to sign in or sign up before continuing')
 end

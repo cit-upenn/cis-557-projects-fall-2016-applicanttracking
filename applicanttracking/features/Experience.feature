@@ -6,7 +6,7 @@ Feature: Experiences page
 
 	Background:
 		Given a Dummy User for Testing
-		Given I need to Sign in
+		Given I need to Sign in as User
 
 	Scenario: Click a new Experience button 
 		Given that I am on the Experience Page
