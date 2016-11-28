@@ -15,6 +15,9 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  provider               :string           default("email"), not null
+#  uid                    :string           default(""), not null
+#  tokens                 :text
 #
 
 class UserCredential < ActiveRecord::Base
