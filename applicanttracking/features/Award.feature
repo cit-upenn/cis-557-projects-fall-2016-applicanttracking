@@ -6,6 +6,7 @@ Feature: Awards page
 
 	Background:
 		Given a Dummy User for Testing
+		Given I need to Sign in
 
 
 	Scenario: Click a new Award button 

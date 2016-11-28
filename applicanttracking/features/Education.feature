@@ -6,7 +6,7 @@ Feature: Education page
 
 	Background:
 		Given a Dummy User for Testing
-
+		Given I need to Sign in
 
 	Scenario: Click a new Education button 
 		Given that I am on the Education Page

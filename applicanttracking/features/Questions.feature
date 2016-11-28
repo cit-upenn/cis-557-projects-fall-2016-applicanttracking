@@ -4,6 +4,9 @@ Feature: Questions page
 	So that I can keep track Question related information
 	I want to create new Question Content
 
+	Background:
+		Given I need to Sign in
+
 	Scenario: Click a new Questions button 
 		Given that I am on the Questions Page
 		When I click new Question button 

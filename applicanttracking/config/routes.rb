@@ -100,6 +100,7 @@
 Rails.application.routes.draw do
   devise_for :user_credentials 
 
+
   resources :answers do
     member do
       post 'upload' => 'answers#upload'
@@ -111,6 +112,11 @@ Rails.application.routes.draw do
       get 'prompt/:question_type' => 'questions#prompt'
     end
   end
+
+  resources :users
+  resources :admins
+  resources :linkedins
+  resources :githubs
 
 
   resources :awards do
@@ -137,6 +143,8 @@ Rails.application.routes.draw do
     end
   end
   
+
+  root 'users#index'
   # authenticate do
   #   root to: 'devise/sessions#new'
   # end

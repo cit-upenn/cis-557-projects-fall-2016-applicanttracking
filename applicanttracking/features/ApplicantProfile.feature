@@ -4,6 +4,9 @@ Feature: Applicant Profile page
 	So that I can keep track my Applicant Profile Information
 	I want to create a new Applicant Profile
 
+	Background:
+		Given I need to Sign in
+
 	Scenario: Click a new Applicant button 
 		Given that I am on the Users Page
 		When I click new Users button 

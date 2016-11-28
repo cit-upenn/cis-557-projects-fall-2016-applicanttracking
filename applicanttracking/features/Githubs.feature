@@ -4,6 +4,9 @@ Feature: Githubs page
 	So that I can keep track Githubs related information
 	I want to create new Githubs Content
 
+	Background:
+		Given I need to Sign in
+
 	Scenario: Click a new Github button 
 		Given that I am on the Githubs Page
 		When I click new Github button 

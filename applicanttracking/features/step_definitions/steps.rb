@@ -27,6 +27,20 @@ Given (/^a Dummy Question for Testing$/) do
 	                   			) 
 end
 
+Given (/^I need to Sign in$/) do
+	email = 'test@email.com'
+	password = '123456'
+
+	user_credentials = UserCredential.new( :email => email, :password => password, :password_confirmation => password ).save!
+    
+    visit 'http://localhost:3000/user_credentials/sign_in'
+    fill_in 'user_credential_email', :with => email
+    fill_in 'user_credential_password', :with => password	
+
+    click_button "Log in"
+end
+
+
 
 ############ Given statements ###########
 
@@ -541,12 +555,43 @@ When (/I try to create a new Answers Content$/ ) do
 	click_button "Create Answer"
 
 end
-
-When (/I try to create a new Answers Content without answer field$/ ) do
+ 
+When (/I try to create a new Answers Content with Video$/ ) do
 	
-	#fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
-	fill_in 'answer_data_type' , :with => "text"
+	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	fill_in 'answer_data_type' , :with => "Video"
 	#fill_in 'answer_video_answer' , :with => "1"
+	fill_in 'answer_question_id' , :with => "1"
+	fill_in 'answer_user_id' , :with => "1"
+
+	#attach_file('ok', File.absolute_path('./fileset/publisher/upload_pic.jpg'))
+    
+    attach_file('answer_video', Rails.root.join('samples', 'small.mp4'))
+
+	click_button "Create Answer"
+
+end
+
+When (/I try to create a new Answers Content with Unsupported Video Type$/ ) do
+	
+	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	fill_in 'answer_data_type' , :with => "Video"
+	#fill_in 'answer_video_answer' , :with => "1"
+	fill_in 'answer_question_id' , :with => "1"
+	fill_in 'answer_user_id' , :with => "1"
+
+	#attach_file('ok', File.absolute_path('./fileset/publisher/upload_pic.jpg'))
+    
+    attach_file('answer_video', Rails.root.join('samples', 'quick.avi'))
+
+	click_button "Create Answer"
+
+end
+
+
+When (/I try to create a new Answers Content without data type field$/ ) do
+	
+	#fill_in 'answer_data_type' , :with => "text"
 	fill_in 'answer_question_id' , :with => "1"
 	fill_in 'answer_user_id' , :with => "1"
 
@@ -741,6 +786,11 @@ Then (/^I should see the new Answers page$/) do
 
 end
 
+Then (/^I should see the new Answers page with the Video name displayed$/) do
+	assert page.has_content?( "Answer was successfully created" )
+	page.has_css?("a[contains(href, 'small.mp4')]")
+
+end
 
 
 # => General Error message #

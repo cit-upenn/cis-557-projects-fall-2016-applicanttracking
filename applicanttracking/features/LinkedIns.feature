@@ -4,6 +4,10 @@ Feature: LinkedIns page
 	So that I can keep track LinkedIns related information
 	I want to create new LinkedIns Content
 
+	Background:
+		Given a Dummy User for Testing
+		Given I need to Sign in
+	
 	Scenario: Click a new LinkedIn button 
 		Given that I am on the LinkedIns Page
 		When I click new LinkedIn button 
@@ -11,7 +15,7 @@ Feature: LinkedIns page
 
 	Scenario: Create a new LinkedIns Content
 		Given that I am on the New LinkedIns Page
-		When I try to create a new LinkedIns Content 
+		When I try to create a new LinkedIns Content
 		Then I should see the new LinkedIns page
 
 	Scenario: Create a new LinkedIns Content without url

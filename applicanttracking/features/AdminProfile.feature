@@ -4,6 +4,9 @@ Feature: Admins page
 	So that I can keep track Admin related information
 	I want to create a new Admin Profile
 
+    Background:
+		Given I need to Sign in
+
 	Scenario: Click a new Admin button 
 		Given that I am on the Admins Page
 		When I click new Admin button 
