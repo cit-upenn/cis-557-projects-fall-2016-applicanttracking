@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127025756) do
+ActiveRecord::Schema.define(version: 20161128063315) do
+
+  create_table "admin_credentials", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "admin_credentials", ["email"], name: "index_admin_credentials_on_email", unique: true
+  add_index "admin_credentials", ["reset_password_token"], name: "index_admin_credentials_on_reset_password_token", unique: true
 
   create_table "admins", force: :cascade do |t|
     t.string   "api_auth_token"
@@ -19,9 +37,21 @@ ActiveRecord::Schema.define(version: 20161127025756) do
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "answers", force: :cascade do |t|
     t.text     "text_answer"
@@ -122,26 +152,22 @@ ActiveRecord::Schema.define(version: 20161127025756) do
   end
 
   create_table "user_credentials", force: :cascade do |t|
-    t.string   "email",                  default: "",      null: false
-    t.string   "encrypted_password",     default: "",      null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,       null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.string   "provider",               default: "email", null: false
-    t.string   "uid",                    default: "",      null: false
-    t.text     "tokens"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "user_credentials", ["email"], name: "index_user_credentials_on_email", unique: true
   add_index "user_credentials", ["reset_password_token"], name: "index_user_credentials_on_reset_password_token", unique: true
-  add_index "user_credentials", ["uid", "provider"], name: "index_user_credentials_on_uid_and_provider", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

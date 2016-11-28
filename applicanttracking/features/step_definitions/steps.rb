@@ -40,7 +40,18 @@ Given (/^I need to Sign in$/) do
     click_button "Log in"
 end
 
+Given (/^I need to Sign in as Admin$/) do
+	email = 'admin@email.com'
+	password = '123456'
 
+	user_credentials = AdminCredential.new( :email => email, :password => password, :password_confirmation => password ).save!
+    
+    visit 'http://localhost:3000/admin_credentials/sign_in'
+    fill_in 'admin_credential_email', :with => email
+    fill_in 'admin_credential_password', :with => password	
+
+    click_button "Log in"
+end
 
 ############ Given statements ###########
 

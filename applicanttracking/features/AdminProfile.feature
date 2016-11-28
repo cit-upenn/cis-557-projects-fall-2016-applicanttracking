@@ -5,7 +5,7 @@ Feature: Admins page
 	I want to create a new Admin Profile
 
     Background:
-		Given I need to Sign in
+		Given I need to Sign in as Admin
 
 	Scenario: Click a new Admin button 
 		Given that I am on the Admins Page

@@ -98,6 +98,7 @@
 #
 
 Rails.application.routes.draw do
+  devise_for :admin_credentials
   devise_for :user_credentials 
 
 
