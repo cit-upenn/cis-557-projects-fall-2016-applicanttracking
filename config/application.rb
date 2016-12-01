@@ -24,7 +24,7 @@ module Applicanttracking
     config.active_record.raise_in_transactional_callbacks = true
 
     # Enable Devise authentication
-    config.enable_devise = true
+    config.enable_devise = false
 
   end
 end
