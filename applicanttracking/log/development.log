@@ -1,0 +1,1880 @@
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 14:54:14 -0500
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.7.1) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (120.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (166.6ms)
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (6.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateExperiences (20161029174752)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "current" boolean, "title" varchar, "company" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_experiences_on_user_id" ON "experiences" ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161029174752"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEducations (20161029174938)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "educations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "current" boolean, "degree" varchar, "school" varchar, "gpa" float, "major" varchar, "minor" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_educations_on_user_id" ON "educations" ("user_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161029174938"]]
+  [1m[35m (21.8ms)[0m  commit transaction
+Migrating to CreateExtracurriculars (20161029175048)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "extracurriculars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "organization" varchar, "current" boolean, "position" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_extracurriculars_on_user_id" ON "extracurriculars" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161029175048"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAwards (20161029175151)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "awards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "date" date, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_awards_on_user_id" ON "awards" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161029175151"]]
+  [1m[35m (13.9ms)[0m  commit transaction
+Migrating to CreateGithubs (20161029175247)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "githubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "path" varchar, "username" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_githubs_on_user_id" ON "githubs" ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161029175247"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateLinkedins (20161029175333)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "linkedins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "path" varchar, "username" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_linkedins_on_user_id" ON "linkedins" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161029175333"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+Migrating to CreateAdmins (20161029175448)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "api_auth_token" varchar, "email" varchar, "first_name" varchar, "middle_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161029175448"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Migrating to CreateUsers (20161029201201)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "middle_name" varchar, "last_name" varchar, "dob" date, "phone" bigint, "email" varchar, "street_address" varchar, "city" varchar, "state" varchar, "country" varchar, "zipcode" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161029201201"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+Migrating to RemoveEndFromEducation (20161106211218)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "aeducations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "current" boolean, "degree" varchar, "school" varchar, "gpa" float, "major" varchar, "minor" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_educations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_educations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_aeducations_on_user_id" ON "aeducations" ("user_id")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "educations"[0m
+  [1m[35m (5.5ms)[0m  DROP TABLE "educations"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "educations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "current" boolean, "degree" varchar, "school" varchar, "gpa" float, "major" varchar, "minor" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aeducations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aeducations_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_educations_on_user_id" ON "educations" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aeducations"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aeducations"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106211218"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddEndDateToEducation (20161106211311)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "educations" ADD "end_date" date[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106211311"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+Migrating to DropEndFromExtracurricular (20161106213948)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161106213948"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Migrating to AddEndDateToExtracurricular (20161106214002)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "extracurriculars" ADD "end_date" date
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161106214002"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+Migrating to DropEndFromExperience (20161106214709)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106214709"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddEndDateToExperience (20161106214723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.5ms)[0m  [1mALTER TABLE "experiences" ADD "end_date" date[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106214723"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveEndFromExperience (20161106215435)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "aexperiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "current" boolean, "title" varchar, "company" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "end_date" date) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_experiences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_experiences_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_aexperiences_on_user_id" ON "aexperiences" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "experiences"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "experiences"[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "current" boolean, "title" varchar, "company" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "end_date" date) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aexperiences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aexperiences_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_experiences_on_user_id" ON "experiences" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aexperiences"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "aexperiences"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161106215435"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+Migrating to RemoveEndFromExtracurricular (20161106215449)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "aextracurriculars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "end" date, "organization" varchar, "current" boolean, "position" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "end_date" date) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_extracurriculars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_extracurriculars_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_aextracurriculars_on_user_id" ON "aextracurriculars" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "extracurriculars"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "extracurriculars"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "extracurriculars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start" date, "organization" varchar, "current" boolean, "position" varchar, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "end_date" date) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aextracurriculars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aextracurriculars_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_extracurriculars_on_user_id" ON "extracurriculars" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aextracurriculars"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aextracurriculars"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106215449"]]
+  [1m[36m (17.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateQuestions (20161106221001)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_type" varchar, "prompt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161106221001"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAnswers (20161106221330)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text_answer" text, "data_type" varchar, "video_answer" blob, "question_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_answers_on_user_id" ON "answers" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161106221330"]]
+  [1m[35m (4.8ms)[0m  commit transaction
+Migrating to AddSubmittedToUser (20161106233653)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "submitted" boolean
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161106233653"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+Migrating to DeviseCreateUserCredentials (20161116014327)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "user_credentials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_user_credentials_on_email" ON "user_credentials" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_user_credentials_on_reset_password_token" ON "user_credentials" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161116014327"]]
+  [1m[36m (17.2ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseTokenAuthCreateUserCredentials (20161126034911)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "user_credentials" ADD "provider" varchar DEFAULT 'email' NOT NULL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "user_credentials" ADD "uid" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "user_credentials" ADD "tokens" text[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_user_credentials_on_uid_and_provider" ON "user_credentials" ("uid", "provider")
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161126034911"]]
+  [1m[35m (121.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_awards_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_awards_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_educations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_educations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_experiences_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_experiences_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_extracurriculars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_extracurriculars_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_githubs_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_githubs_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_linkedins_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_linkedins_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_uid_and_provider' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_credentials_on_email' AND type='index'
+
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 14:55:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2016-12-02 14:55:23 -0500
+Processing by DeviseTokenAuth::SessionsController#new as HTML
+Completed 405 Method Not Allowed in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 15:16:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7.1/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 89ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:16:17 -0500
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:16:17 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (52.4ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.8ms)
+Completed 200 OK in 3573ms (Views: 3550.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:16:20 -0500
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:16:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 142ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2016-12-02 15:16:21 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (103.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.1ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:16:32 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oae1gseZRfmK6DmLTbP89ZFzlqCuHtrMgwXSWjohy3fZQEjdPsCtLdR2a4t0mPfZqdiwvXCVDNzMHe2+wf1RjQ==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."email" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["email", "steven@email.com"]]
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oae1gseZRfmK6DmLTbP89ZFzlqCuHtrMgwXSWjohy3fZQEjdPsCtLdR2a4t0mPfZqdiwvXCVDNzMHe2+wf1RjQ==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 357ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_credentials/sign_up" for 127.0.0.1 at 2016-12-02 15:16:35 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (11.8ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.4ms)
+Completed 200 OK in 227ms (Views: 225.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_credentials" for 127.0.0.1 at 2016-12-02 15:16:45 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/hSMQ5yEqS4KfDvIK52QJnyqc/wCDniz1jPqwGBoSbSG83EcZd1B+lTiacgStpsKRAFV4dyFrqOZK9Ukm7TTTg==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "user_credentials" WHERE "user_credentials"."provider" = ? AND "user_credentials"."email" = ?  [["provider", "email"], ["email", "steven@email.com"]]
+  [1m[36mSQL (45.3ms)[0m  [1mINSERT INTO "user_credentials" ("email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "steven@email.com"], ["encrypted_password", "$2a$11$ptbVG8rL0qkAQNkzOawbGOsO9FgKJjoKHw4lhm4GxeOy6YKDDLLte"], ["tokens", "{}"], ["uid", "steven@email.com"], ["created_at", "2016-12-02 20:16:45.967154"], ["updated_at", "2016-12-02 20:16:45.967154"]]
+  [1m[35m (77.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["last_sign_in_at", "2016-12-02 20:16:46.094054"], ["current_sign_in_at", "2016-12-02 20:16:46.094054"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-12-02 20:16:46.095370"], ["id", 1]]
+  [1m[36m (60.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 445ms (ActiveRecord: 183.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:16:46 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.4ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (12.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (19.9ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 358ms (Views: 272.8ms | ActiveRecord: 13.0ms)
+
+
+Started DELETE "/user_credentials/sign_out" for 127.0.0.1 at 2016-12-02 15:16:49 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QyLDZ4Fxwm1o0Ly2Ec90Q5Kvzw3vwnjqNyfIXrqMaPk7xT44eCgquTZO7rYo5H9vqgTpEDFJrvp4P/e6QVDyAw=="}
+  [1m[35mUserCredential Load (0.4ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/user_credentials/sign_in
+Completed 302 Found in 52ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:16:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 154ms (Views: 150.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_credentials/sign_in.json" for 127.0.0.1 at 2016-12-02 15:17:38 -0500
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as JSON
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  responders (2.3.0) lib/action_controller/respond_with.rb:207:in `respond_with'
+  devise (4.2.0) app/controllers/devise/sessions_controller.rb:12:in `new'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+  devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+  devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+  warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+  warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+  warden (1.2.6) lib/warden/manager.rb:43:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (114.2ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:18:15 -0500
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as */*
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.2ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 723ms (Views: 720.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/auth/" for 127.0.0.1 at 2016-12-02 15:18:59 -0500
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: registration
+Unpermitted parameter: registration
+Unpermitted parameter: registration
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (26.8ms)[0m  SELECT COUNT(*) FROM "user_credentials" WHERE "user_credentials"."provider" = ? AND "user_credentials"."email" = ?  [["provider", "email"], ["email", "john@email.com"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "user_credentials" ("email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "john@email.com"], ["encrypted_password", "$2a$11$WlA6hez97W.I1FrGABc74.ri/6IELtUiybs.Dp0xnCw/bKcte3V/e"], ["tokens", "{}"], ["uid", "john@email.com"], ["created_at", "2016-12-02 20:19:00.152184"], ["updated_at", "2016-12-02 20:19:00.152184"]]
+  [1m[35m (23.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540}}"], ["updated_at", "2016-12-02 20:19:00.339371"], ["id", 2]]
+  [1m[36m (15.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 419ms (Views: 0.4ms | ActiveRecord: 67.2ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 15:19:49 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1[0m  [["uid", "john@email.com"]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Filter chain halted as :set_user rendered or redirected
+Completed 400 Bad Request in 119ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 15:20:15 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gROqOdmlO7v9Yq5QjLV98gtVVKsYYhuz9p2arRM2j4glgtL0gw2JoJesK0SWEFGc/6CKe/JsPbXCf4GscLhk9g==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."email" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["email", "steven@email.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mUPDATE "user_credentials" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["current_sign_in_at", "2016-12-02 20:20:15.841250"], ["sign_in_count", 2], ["updated_at", "2016-12-02 20:20:15.842644"], ["id", 1]]
+  [1m[35m (12.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 258ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 15:20:15 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:20:20 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 199ms (Views: 196.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-12-02 15:20:23 -0500
+Processing by UsersController#new as HTML
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (37.0ms)
+  Rendered users/new.html.erb within layouts/application (41.3ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 212ms (Views: 187.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:25:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_user_credential! rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 15:29:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_user_credential! rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:03:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as */*
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as */*
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (79.5ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.8ms)
+Completed 200 OK in 953ms (Views: 934.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_credentials/sign_in.json" for 127.0.0.1 at 2016-12-02 16:04:20 -0500
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as JSON
+  Parameters: {"email"=>"steven@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]"}}
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms)
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  responders (2.3.0) lib/action_controller/respond_with.rb:207:in `respond_with'
+  devise (4.2.0) app/controllers/devise/sessions_controller.rb:12:in `new'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+  devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+  devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+  warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+  warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+  warden (1.2.6) lib/warden/manager.rb:43:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:23:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (9.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (53.0ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.7ms)
+Completed 200 OK in 756ms (Views: 598.3ms | ActiveRecord: 11.3ms)
+
+
+Started DELETE "/user_credentials/sign_out" for 127.0.0.1 at 2016-12-02 16:23:15 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HqHz/jjd6gKWexrqh0pNuGNtajhNoBF9nYTaLgDlHDThsjj+9Ynq2Hw57XsdH5o/a40zJpr25FkEkE5GnKXqew=="}
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/user_credentials/sign_in
+Completed 302 Found in 26ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:23:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (36.4ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.4ms)
+Completed 200 OK in 171ms (Views: 161.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:23:21 -0500
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:23:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.4ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 159ms (Views: 157.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:23:32 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zpjex4bmLeBRhmgadICFuPWhJHxvjEq0QfxRZEUeJrZydNn89bcFNzp5k8yAiEpFeesdy8BaWfzU+iyDbkWgmQ==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUserCredential Load (0.6ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."email" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["email", "steven@email.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.9ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 20:20:15.841250"], ["current_sign_in_at", "2016-12-02 21:23:33.159629"], ["sign_in_count", 3], ["updated_at", "2016-12-02 21:23:33.161647"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 282ms (ActiveRecord: 28.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:23:33 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 131ms (Views: 128.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:24:22 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463}}"], ["updated_at", "2016-12-02 21:24:23.004018"], ["id", 2]]
+  [1m[35m (15.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["last_sign_in_at", "2016-12-02 21:24:23.023993"], ["current_sign_in_at", "2016-12-02 21:24:23.023993"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-12-02 21:24:23.028417"], ["id", 2]]
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Completed 200 OK in 344ms (Views: 0.3ms | ActiveRecord: 34.3ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:25:21 -0500
+
+ActionController::RoutingError (uninitialized constant Api::V1::UsersController):
+  activesupport (4.2.7.1) lib/active_support/inflector/methods.rb:276:in `const_get'
+  activesupport (4.2.7.1) lib/active_support/inflector/methods.rb:276:in `block in constantize'
+  activesupport (4.2.7.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.7.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.7.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.2ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (153.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.2ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:26:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564}}"], ["updated_at", "2016-12-02 21:26:04.986792"], ["id", 2]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "user_credentials" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["current_sign_in_at", "2016-12-02 21:26:05.002258"], ["sign_in_count", 2], ["updated_at", "2016-12-02 21:26:05.003676"], ["id", 2]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 301ms (Views: 0.3ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:26:34 -0500
+Processing by Api::V1::UsersApiController#show as JSON
+  Parameters: {"id"=>"1", "users_api"=>{}}
+  [1m[35mUserCredential Load (0.7ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.7ms)
+
+ActionView::MissingTemplate (Missing template api/v1/users_api/show, users_base/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/stevenhw/CIS557/cis-557-projects-fall-2016-applicanttracking/applicanttracking/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise_token_auth-0.1.39/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+  actionview (4.2.7.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (38.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.4ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:28:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564},\"yzUucEe2138sItRo1oMZHg\":{\"token\":\"$2a$10$wHLNQGc4JfmMLPu36dVDQ.mF.WBMaBkqHbOcruPahPSOWrX/hcM9W\",\"expiry\":1481923718}}"], ["updated_at", "2016-12-02 21:28:38.005535"], ["id", 2]]
+  [1m[36m (32.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:26:05.002258"], ["current_sign_in_at", "2016-12-02 21:28:38.048821"], ["sign_in_count", 3], ["updated_at", "2016-12-02 21:28:38.050362"], ["id", 2]]
+  [1m[35m (25.3ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 352ms (Views: 0.3ms | ActiveRecord: 60.1ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:29:11 -0500
+Processing by Api::V1::UsersApiController#show as JSON
+  Parameters: {"id"=>"1", "users_api"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+  Rendered users_base/show.json.jbuilder (6.9ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Missing partial users/_user with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:jbuilder]}. Searched in:
+  * "/home/stevenhw/CIS557/cis-557-projects-fall-2016-applicanttracking/applicanttracking/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise_token_auth-0.1.39/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+    1: json.partial! "users/user", user: @user
+  app/views/users_base/show.json.jbuilder:1:in `_app_views_users_base_show_json_jbuilder___2480632757995391703_69912677903260'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.8ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (71.6ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:30:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564},\"yzUucEe2138sItRo1oMZHg\":{\"token\":\"$2a$10$wHLNQGc4JfmMLPu36dVDQ.mF.WBMaBkqHbOcruPahPSOWrX/hcM9W\",\"expiry\":1481923718},\"f9TX0xxl-W_NkwaYn-hfgg\":{\"token\":\"$2a$10$faaWAH1jcjBx4nlFTe0/y.UA1loZEsB/WswzyJNXXpyYI59/0e5eW\",\"expiry\":1481923833}}"], ["updated_at", "2016-12-02 21:30:33.922620"], ["id", 2]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:28:38.048821"], ["current_sign_in_at", "2016-12-02 21:30:33.940094"], ["sign_in_count", 4], ["updated_at", "2016-12-02 21:30:33.941707"], ["id", 2]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 308ms (Views: 0.3ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:31:00 -0500
+Processing by Api::V1::UsersApiController#show as JSON
+  Parameters: {"id"=>"1", "users_api"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+  Rendered users_base/_user.json.jbuilder (5.7ms)
+  Rendered users_base/show.json.jbuilder (9.4ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! user, :id, :first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :created_at, :updated_at
+    2: json.url user_url(user, format: :json)
+  app/views/users_base/_user.json.jbuilder:1:in `_app_views_users_base__user_json_jbuilder__1624738430895329329_69889760382560'
+  app/views/users_base/show.json.jbuilder:1:in `_app_views_users_base_show_json_jbuilder__4455719920670314440_69889760256020'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (67.9ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:32:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.5ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564},\"yzUucEe2138sItRo1oMZHg\":{\"token\":\"$2a$10$wHLNQGc4JfmMLPu36dVDQ.mF.WBMaBkqHbOcruPahPSOWrX/hcM9W\",\"expiry\":1481923718},\"f9TX0xxl-W_NkwaYn-hfgg\":{\"token\":\"$2a$10$faaWAH1jcjBx4nlFTe0/y.UA1loZEsB/WswzyJNXXpyYI59/0e5eW\",\"expiry\":1481923833},\"7mE9EMo93v_vPQfsNLWhew\":{\"token\":\"$2a$10$VZbJFuc51/DZsILOSrxlK.6WayHZIsQojZ//DudBwjm0/I34TJ.1C\",\"expiry\":1481923974}}"], ["updated_at", "2016-12-02 21:32:54.800799"], ["id", 2]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:30:33.940094"], ["current_sign_in_at", "2016-12-02 21:32:54.817524"], ["sign_in_count", 5], ["updated_at", "2016-12-02 21:32:54.819112"], ["id", 2]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 320ms (Views: 0.5ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:33:46 -0500
+Processing by Api::V1::UsersApiController#show as JSON
+  Parameters: {"id"=>"1", "users_api"=>{}}
+  [1m[35mUserCredential Load (0.8ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.8ms)
+
+ActionView::MissingTemplate (Missing template api/v1/users_api/show, users_base/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/stevenhw/CIS557/cis-557-projects-fall-2016-applicanttracking/applicanttracking/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise_token_auth-0.1.39/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+  actionview (4.2.7.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (27.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.8ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:38:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 1.2ms)
+
+ActionView::MissingTemplate (Missing template api/v1/users/show, users_base/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/stevenhw/CIS557/cis-557-projects-fall-2016-applicanttracking/applicanttracking/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise_token_auth-0.1.39/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+  actionview (4.2.7.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/stevenhw/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (32.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.8ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:39:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564},\"yzUucEe2138sItRo1oMZHg\":{\"token\":\"$2a$10$wHLNQGc4JfmMLPu36dVDQ.mF.WBMaBkqHbOcruPahPSOWrX/hcM9W\",\"expiry\":1481923718},\"f9TX0xxl-W_NkwaYn-hfgg\":{\"token\":\"$2a$10$faaWAH1jcjBx4nlFTe0/y.UA1loZEsB/WswzyJNXXpyYI59/0e5eW\",\"expiry\":1481923833},\"7mE9EMo93v_vPQfsNLWhew\":{\"token\":\"$2a$10$VZbJFuc51/DZsILOSrxlK.6WayHZIsQojZ//DudBwjm0/I34TJ.1C\",\"expiry\":1481923974},\"PRH_EZtbh1Fe9eBGBo8zAw\":{\"token\":\"$2a$10$gyEb7uzzeGQLxHpnVmEo8udm32uyjwKUF2DXUw8R8jhJSnH0.dj9C\",\"expiry\":1481924389}}"], ["updated_at", "2016-12-02 21:39:49.355619"], ["id", 2]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:32:54.817524"], ["current_sign_in_at", "2016-12-02 21:39:49.374287"], ["sign_in_count", 6], ["updated_at", "2016-12-02 21:39:49.375933"], ["id", 2]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 319ms (Views: 0.4ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:40:18 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+  Rendered users_base/_user.json.jbuilder (8.0ms)
+  Rendered users_base/show.json.jbuilder (14.0ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: json.extract! user, :id, :first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :created_at, :updated_at
+    2: json.url user_url(user, format: :json)
+  app/views/users_base/_user.json.jbuilder:1:in `_app_views_users_base__user_json_jbuilder__310107457417918395_70173428653740'
+  app/views/users_base/show.json.jbuilder:1:in `_app_views_users_base_show_json_jbuilder___26520423409679306_70173428522440'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.0ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.6ms)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2016-12-02 16:43:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"john@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"john@email.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE (email = 'john@email.com' AND provider='email')  ORDER BY "user_credentials"."id" ASC LIMIT 1
+Unpermitted parameter: session
+Unpermitted parameter: session
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "user_credentials" SET "tokens" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?  [["tokens", "{\"NJYxT6LaEnRqUXv2Zaz3JQ\":{\"token\":\"$2a$10$Z/PBiDnjIgdjmK.XxCMFFOdcoa.1hPHf7l72JiXBjL7ViT88gaqmi\",\"expiry\":1481919540},\"zAPJwtCV8tg57hZlHVOcQQ\":{\"token\":\"$2a$10$D/q8D6Mfs.EEFheDJzwHiurABrvR9S3GVZ6UYvaXSRUb65I0DH5Oy\",\"expiry\":1481923463},\"O7p5iyQ8SxqzGfWwON7hPQ\":{\"token\":\"$2a$10$jS7B5NnXJl1sfrd46n1VZe.mmtr0QIMYnN9MnfXqP8mcbRwZvA4om\",\"expiry\":1481923564},\"yzUucEe2138sItRo1oMZHg\":{\"token\":\"$2a$10$wHLNQGc4JfmMLPu36dVDQ.mF.WBMaBkqHbOcruPahPSOWrX/hcM9W\",\"expiry\":1481923718},\"f9TX0xxl-W_NkwaYn-hfgg\":{\"token\":\"$2a$10$faaWAH1jcjBx4nlFTe0/y.UA1loZEsB/WswzyJNXXpyYI59/0e5eW\",\"expiry\":1481923833},\"7mE9EMo93v_vPQfsNLWhew\":{\"token\":\"$2a$10$VZbJFuc51/DZsILOSrxlK.6WayHZIsQojZ//DudBwjm0/I34TJ.1C\",\"expiry\":1481923974},\"PRH_EZtbh1Fe9eBGBo8zAw\":{\"token\":\"$2a$10$gyEb7uzzeGQLxHpnVmEo8udm32uyjwKUF2DXUw8R8jhJSnH0.dj9C\",\"expiry\":1481924389},\"uhOeUrzGBomwTx5Mv9sCsw\":{\"token\":\"$2a$10$jtRYz3ZEe07kQ51Jt.Q3LOw49DJUnwRmQiC5q3ucJgDVD.a4KUG.S\",\"expiry\":1481924589}}"], ["updated_at", "2016-12-02 21:43:09.898822"], ["id", 2]]
+  [1m[36m (33.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:39:49.374287"], ["current_sign_in_at", "2016-12-02 21:43:09.942909"], ["sign_in_count", 7], ["updated_at", "2016-12-02 21:43:09.944762"], ["id", 2]]
+  [1m[35m (23.4ms)[0m  commit transaction
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 360ms (Views: 0.4ms | ActiveRecord: 59.0ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:43:39 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Filter chain halted as :set_user rendered or redirected
+Completed 400 Bad Request in 160ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/user_credentials/sign_out" for 127.0.0.1 at 2016-12-02 16:45:45 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HH7mGvDRdnJbik1wht1fMPUmkzyOIS3u1gd/i81hQ71QgS9qNMnS7K6RjwswPYfd/vAgEOW3MIBMfjk6npI+Lg=="}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/user_credentials/sign_in
+Completed 302 Found in 63ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:45:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (28.9ms)
+  Rendered user_credentials/shared/_logout.html.erb (1.1ms)
+Completed 200 OK in 566ms (Views: 560.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_credentials/sign_in" for 127.0.0.1 at 2016-12-02 16:45:56 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uTrD5WYxGr+twcNKutEttpv09Sz0AHrhYmrTkt8uZ2V7C+OX51GK+VfhpdXiOYKvEvmN7GNJE0XdoW0fhoEHCA==", "user_credential"=>{"email"=>"steven@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."email" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["email", "steven@email.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "user_credentials" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "user_credentials"."id" = ?[0m  [["last_sign_in_at", "2016-12-02 21:23:33.159629"], ["current_sign_in_at", "2016-12-02 21:45:56.275483"], ["sign_in_count", 4], ["updated_at", "2016-12-02 21:45:56.277074"], ["id", 1]]
+  [1m[35m (9.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 216ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-02 16:45:56 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/railties-4.2.7.1/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:46:00 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users_base/index.html.erb within layouts/application (14.1ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 199ms (Views: 188.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-12-02 16:46:03 -0500
+Processing by UsersController#new as HTML
+  [1m[36mUserCredential Load (0.1ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users_base/_form.html.erb (35.3ms)
+  Rendered users_base/new.html.erb within layouts/application (76.8ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.9ms)
+Completed 200 OK in 277ms (Views: 244.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 16:46:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7xl6NRVLn3x5kzd80XYJf2vzS6o1XXse6Sw0JJyf42R7nET6QjUmzfspXoYF0687QPxlJ+k5NgwyEwD2VR5ziw==", "user"=>{"first_name"=>"STEVEN", "middle_name"=>"S", "last_name"=>"HWANG", "dob(1i)"=>"2011", "dob(2i)"=>"12", "dob(3i)"=>"2", "phone"=>"123456789", "email"=>"email@email.com", "street_address"=>"12 dr.", "city"=>"Potomac", "state"=>"MD", "country"=>"USA", "zipcode"=>"12345", "submitted"=>"0"}, "commit"=>"Create User"}
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "middle_name", "last_name", "phone", "email", "street_address", "city", "state", "country", "zipcode", "submitted", "dob", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["first_name", "STEVEN"], ["middle_name", "S"], ["last_name", "HWANG"], ["phone", 123456789], ["email", "email@email.com"], ["street_address", "12 dr."], ["city", "Potomac"], ["state", "MD"], ["country", "USA"], ["zipcode", "12345"], ["submitted", "f"], ["dob", "2011-12-02"], ["created_at", "2016-12-02 21:46:33.382045"], ["updated_at", "2016-12-02 21:46:33.382045"]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 35ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-12-02 16:46:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users_base/show.html.erb within layouts/application (7.6ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 182ms (Views: 164.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:46:35 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUserCredential Load (0.3ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users_base/index.html.erb within layouts/application (12.8ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 212ms (Views: 208.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/users/1.json" for 127.0.0.1 at 2016-12-02 16:46:52 -0500
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1[0m  [["uid", "john@email.com"]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users_base/_user.json.jbuilder (1.5ms)
+  Rendered users_base/show.json.jbuilder (55.7ms)
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 174ms (Views: 67.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2016-12-02 16:47:18 -0500
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUserCredential Load (0.4ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1[0m  [["uid", "john@email.com"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users_base/index.json.jbuilder (9.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (Missing partial users/_user with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:jbuilder]}. Searched in:
+  * "/home/stevenhw/CIS557/cis-557-projects-fall-2016-applicanttracking/applicanttracking/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise_token_auth-0.1.39/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/stevenhw/.rvm/gems/ruby-2.3.1/gems/twitter-bootstrap-rails-3.2.2/app/views"
+):
+    1: json.array! @users, partial: 'users/user', as: :user
+  app/views/users_base/index.json.jbuilder:1:in `_app_views_users_base_index_json_jbuilder__295231806112296731_70217399066320'
+
+
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.9ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/stevenhw/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.1ms)
+
+
+Started GET "/api/v1/users.json" for 127.0.0.1 at 2016-12-02 16:48:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."uid" = ? LIMIT 1  [["uid", "john@email.com"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users_base/_user.json.jbuilder (1.3ms)
+  Rendered users_base/index.json.jbuilder (19.6ms)
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 163ms (Views: 34.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 16:59:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.8ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users_base/index.html.erb within layouts/application (47.9ms)
+  Rendered user_credentials/shared/_logout.html.erb (1.4ms)
+Completed 200 OK in 750ms (Views: 683.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2016-12-02 17:00:09 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUserCredential Load (0.1ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users_base/_form.html.erb (43.7ms)
+  Rendered users_base/edit.html.erb within layouts/application (47.8ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.5ms)
+Completed 200 OK in 194ms (Views: 160.8ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2016-12-02 17:00:16 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bgOJLI0GcFkVpw06qpD/lunplbp/E8RZeYtzT0KHsQX6hrfj2njJ6JcdZMB+NVnSwua7N6N3iUuitEediwYh6g==", "user"=>{"first_name"=>"Hanna", "middle_name"=>"S", "last_name"=>"HWANG", "dob(1i)"=>"2011", "dob(2i)"=>"12", "dob(3i)"=>"2", "phone"=>"123456789", "email"=>"email@email.com", "street_address"=>"12 dr.", "city"=>"Potomac", "state"=>"MD", "country"=>"USA", "zipcode"=>"12345", "submitted"=>"0"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "first_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["first_name", "Hanna"], ["updated_at", "2016-12-02 22:00:16.957138"], ["id", 1]]
+  [1m[35m (11.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 28ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-12-02 17:00:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users_base/show.html.erb within layouts/application (9.0ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.4ms)
+Completed 200 OK in 152ms (Views: 145.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:00:19 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.3ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users_base/index.html.erb within layouts/application (11.4ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-12-02 17:00:22 -0500
+Processing by UsersController#new as HTML
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users_base/_form.html.erb (13.1ms)
+  Rendered users_base/new.html.erb within layouts/application (17.1ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 149ms (Views: 145.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-02 17:00:46 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5/UKbeqo+EcIQwSwMt2DIcrB3pmB+fHEHEsO792ysHJzcDSivdZB9or5bUrmeCVl4c7wFF2dvNbHdDo9FDMgnQ==", "user"=>{"first_name"=>"steven", "middle_name"=>"s", "last_name"=>"BOOM", "dob(1i)"=>"2016", "dob(2i)"=>"12", "dob(3i)"=>"1", "phone"=>"1", "email"=>"s", "street_address"=>"s", "city"=>"s", "state"=>"s", "country"=>"s", "zipcode"=>"1", "submitted"=>"1"}, "commit"=>"Create User"}
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "middle_name", "last_name", "phone", "email", "street_address", "city", "state", "country", "zipcode", "submitted", "dob", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "steven"], ["middle_name", "s"], ["last_name", "BOOM"], ["phone", 1], ["email", "s"], ["street_address", "s"], ["city", "s"], ["state", "s"], ["country", "s"], ["zipcode", "1"], ["submitted", "t"], ["dob", "2016-12-01"], ["created_at", "2016-12-02 22:00:46.619337"], ["updated_at", "2016-12-02 22:00:46.619337"]]
+  [1m[35m (20.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 32ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-12-02 17:00:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUserCredential Load (0.2ms)[0m  [1mSELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users_base/show.html.erb within layouts/application (16.2ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.3ms)
+Completed 200 OK in 143ms (Views: 138.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:00:48 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users_base/index.html.erb within layouts/application (27.8ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.5ms)
+Completed 200 OK in 212ms (Views: 202.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2016-12-02 17:00:52 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q8jjrET53SMRC07NJyTPjpo7um0QBU+nsISSgzyzCJrXTd1jE4dkkpOxJzfzgWnKsTSU4MxhArVru6ZR9TKYdQ==", "id"=>"2"}
+  [1m[35mUserCredential Load (0.7ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (19.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 37ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-12-02 17:00:52 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUserCredential Load (0.2ms)[0m  SELECT  "user_credentials".* FROM "user_credentials" WHERE "user_credentials"."id" = ?  ORDER BY "user_credentials"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users_base/index.html.erb within layouts/application (19.3ms)
+  Rendered user_credentials/shared/_logout.html.erb (0.2ms)
+Completed 200 OK in 202ms (Views: 190.2ms | ActiveRecord: 3.5ms)

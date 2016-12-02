@@ -1,0 +1,2 @@
+json.extract! user, :id, :first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :created_at, :updated_at
+json.url user_url(user, format: :json)
