@@ -22,4 +22,7 @@ class AdminCredential < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  include DeviseTokenAuth::Concerns::User
+  #include DeviseTokenAuth::Concerns::Admin
 end

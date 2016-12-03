@@ -105,6 +105,7 @@ Rails.application.routes.draw do
       scope :v1 do
       # token auth devise features at api/v1/auth
         mount_devise_token_auth_for 'UserCredential', at: 'auth'
+        mount_devise_token_auth_for 'AdminCredential', at: 'auth/admin'
         resources :users, controller: 'v1/users'
         resources :admins, controller: 'v1/admins'
         resources :linkedins, controller: 'v1/linkedins'
