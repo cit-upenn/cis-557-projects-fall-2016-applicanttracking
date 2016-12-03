@@ -1,0 +1,1 @@
+json.array! @experiences, partial: 'experiences_base/experience', as: :experience

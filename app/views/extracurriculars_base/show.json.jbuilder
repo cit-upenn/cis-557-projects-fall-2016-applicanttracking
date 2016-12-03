@@ -1,0 +1,1 @@
+json.partial! "extracurriculars_base/extracurricular", extracurricular: @extracurricular

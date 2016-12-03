@@ -1,0 +1,1 @@
+json.partial! "experiences_base/experience", experience: @experience

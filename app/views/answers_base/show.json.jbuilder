@@ -1,0 +1,1 @@
+json.partial! "answers_base/answer", answer: @answer

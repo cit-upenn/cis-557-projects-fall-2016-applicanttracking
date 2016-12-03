@@ -1,0 +1,1 @@
+json.partial! "educations_base/education", education: @education

@@ -1,0 +1,1 @@
+json.array! @educations, partial: 'educations_base/education', as: :education

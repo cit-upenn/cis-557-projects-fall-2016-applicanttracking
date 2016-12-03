@@ -106,15 +106,15 @@ Rails.application.routes.draw do
       # token auth devise features at api/v1/auth
         mount_devise_token_auth_for 'UserCredential', at: 'auth'
         resources :users, controller: 'v1/users'
-        # resources :admins, controller: 'v1/admins'
-        # resources :linkedins, controller: 'v1/linkedins'
-        # resources :githubs, controller: 'v1/githubs'
-        # resources :answers, controller: 'v1/answers'
-        # resources :questions, controller: 'v1/questions'
-        # resources :awards, controller: 'v1/awards'
-        # resources :extracurriculars, controller: 'v1/extracurriculars'
-        # resources :educations, controller: 'v1/educations'
-        # resources :experiences, controller: 'v1/experiences'
+        resources :admins, controller: 'v1/admins'
+        resources :linkedins, controller: 'v1/linkedins'
+        resources :githubs, controller: 'v1/githubs'
+        resources :answers, controller: 'v1/answers'
+        resources :questions, controller: 'v1/questions'
+        resources :awards, controller: 'v1/awards'
+        resources :extracurriculars, controller: 'v1/extracurriculars'
+        resources :educations, controller: 'v1/educations'
+        resources :experiences, controller: 'v1/experiences'
       end
     end
 

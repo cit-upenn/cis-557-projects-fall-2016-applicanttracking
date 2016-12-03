@@ -1,0 +1,1 @@
+json.array! @extracurriculars, partial: 'extracurriculars_base/extracurricular', as: :extracurricular

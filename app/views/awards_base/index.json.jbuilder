@@ -1,0 +1,1 @@
+json.array! @awards, partial: 'awards_base/award', as: :award

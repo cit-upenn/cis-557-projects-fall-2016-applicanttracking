@@ -1,0 +1,35 @@
+<%- model_class = Education -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
+  <dd><%= @education.start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= @education.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current) %>:</strong></dt>
+  <dd><%= @education.current %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:degree) %>:</strong></dt>
+  <dd><%= @education.degree %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:school) %>:</strong></dt>
+  <dd><%= @education.school %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gpa) %>:</strong></dt>
+  <dd><%= @education.gpa %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:major) %>:</strong></dt>
+  <dd><%= @education.major %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:minor) %>:</strong></dt>
+  <dd><%= @education.minor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @education.user_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              educations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_education_path(@education), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              education_path(@education),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

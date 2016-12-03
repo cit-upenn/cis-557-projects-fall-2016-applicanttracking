@@ -1,0 +1,1 @@
+json.array! @answers, partial: 'answers_base/answer', as: :answer
