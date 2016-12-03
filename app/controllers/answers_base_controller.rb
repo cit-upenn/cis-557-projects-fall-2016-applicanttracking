@@ -74,6 +74,9 @@ class AnswersBaseController < ApplicationController
     def set_answer
       if Answer.exists?(params[:id])
         @answer = Answer.find(params[:id])
+
+        puts @answer
+
       else
         render json: {:errors => "Answer doesn't exist"}, status: :bad_request
       end

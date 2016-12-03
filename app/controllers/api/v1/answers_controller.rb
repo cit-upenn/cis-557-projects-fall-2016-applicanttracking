@@ -4,7 +4,7 @@ class Api::V1::AnswersController < AnswersBaseController
     before_action :authenticate_user_credential!
   end 
   
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy, :upload]
   include DeviseTokenAuth::Concerns::SetUserByToken
   
 end
