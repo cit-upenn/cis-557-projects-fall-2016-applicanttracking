@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
     has_many :educations
     has_many :experiences
     has_many :extracurriculars
+    has_many :customs
 
 	validates :first_name, :presence => true
     validates :last_name, :presence => true

@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: customs
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  data       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  datatype   :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  data: MyString
+
+two:
+  user: 
+  data: MyString

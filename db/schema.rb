@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203014440) do
+ActiveRecord::Schema.define(version: 20161210012815) do
 
   create_table "admin_credentials", force: :cascade do |t|
     t.string   "email",                  default: "",      null: false
@@ -83,6 +83,16 @@ ActiveRecord::Schema.define(version: 20161203014440) do
   end
 
   add_index "awards", ["user_id"], name: "index_awards_on_user_id"
+
+  create_table "customs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "datatype"
+  end
+
+  add_index "customs", ["user_id"], name: "index_customs_on_user_id"
 
   create_table "educations", force: :cascade do |t|
     t.date     "start"

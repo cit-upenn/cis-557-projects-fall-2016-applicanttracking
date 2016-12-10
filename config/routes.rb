@@ -117,7 +117,14 @@ Rails.application.routes.draw do
   resources :admins
   resources :linkedins
   resources :githubs
+  resources :customs
 
+  resources :customs do
+    collection do
+      get 'user/:id' => 'customs#user'
+      get 'user/:id/type/:datatype' => 'customs#type'
+    end
+  end
 
   resources :awards do
     collection do
@@ -157,9 +164,17 @@ Rails.application.routes.draw do
         resources :admins, controller: 'v1/admins'
         resources :linkedins, controller: 'v1/linkedins'
         resources :githubs, controller: 'v1/githubs'
+        resources :customs, controller: 'v1/customs'
         resources :answers, controller: 'v1/answers' do
           member do
             post 'upload' => 'v1/answers#upload'
+          end
+        end
+
+        resources :customs do
+          collection do
+            get 'user/:id' => 'v1/customs#user'
+            get 'user/:id/type/:datatype' => 'v1/customs#type'
           end
         end
         
