@@ -20,6 +20,16 @@ class AnswersBaseController < ApplicationController
   def show
   end
 
+  def user
+    @answers = Answer.where(user: params[:id])
+    render :index
+  end
+
+  def type
+    @answers = Answer.where(data_type: params[:data_type])
+    render :index
+  end
+
   # GET /answers/new
   def new
     @answer = Answer.new
@@ -74,9 +84,6 @@ class AnswersBaseController < ApplicationController
     def set_answer
       if Answer.exists?(params[:id])
         @answer = Answer.find(params[:id])
-
-        puts @answer
-
       else
         render json: {:errors => "Answer doesn't exist"}, status: :bad_request
       end

@@ -15,9 +15,10 @@ class QuestionsBaseController < ApplicationController
   def show
   end
 
-  # GET /questions/prompt/:question_type
-  def prompt
-    render json: Question.where(question_type: question_params[:question_type])
+  # GET /questions/type/:question_type
+  def type
+    @questions = Question.where(question_type: question_params[:question_type])
+    render :index
   end
 
   # GET /questions/new
@@ -72,7 +73,11 @@ class QuestionsBaseController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
-      @question = Question.find(params[:id])
+      if Question.exists?(params[:id])
+        @question = Question.find(params[:id])
+      else
+        render json: {:errors => "Question doesn't exist"}, status: :bad_request
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -105,11 +105,15 @@ Rails.application.routes.draw do
     member do
       post 'upload' => 'answers#upload'
     end
+    collection do
+        get 'user/:id' => 'answers#user'
+        get 'type/:data_type' => 'answers#type'
+      end
   end
 
   resources :questions do
     collection do
-      get 'prompt/:question_type' => 'questions#prompt'
+      get 'type/:question_type' => 'questions#type'
     end
   end
 
@@ -169,6 +173,10 @@ Rails.application.routes.draw do
           member do
             post 'upload' => 'v1/answers#upload'
           end
+          collection do
+            get 'user/:id' => 'v1/answers#user'
+            get 'type/:data_type' => 'v1/answers#type'
+          end
         end
 
         resources :customs do
@@ -180,7 +188,7 @@ Rails.application.routes.draw do
         
         resources :questions, controller: 'v1/questions' do
           collection do
-            get 'prompt/:question_type' => 'v1/questions#prompt'
+            get 'type/:question_type' => 'v1/questions#type'
           end
         end
 
