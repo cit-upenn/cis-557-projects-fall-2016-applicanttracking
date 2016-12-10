@@ -1,5 +1,5 @@
 class CustomsBaseController < ApplicationController
-  before_action :set_custom, only: [:show, :edit, :update, :destroy]
+  #before_action :set_custom, only: [:show, :edit, :update, :destroy]
 
   # GET /customs
   # GET /customs.json

@@ -1,0 +1,1 @@
+json.partial! "customs_base/custom", custom: @custom

@@ -1,0 +1,1 @@
+json.array! @customs, partial: 'customs_base/custom', as: :custom
