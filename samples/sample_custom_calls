@@ -9,3 +9,8 @@ curl -H 'Content-Type: application/json' -H 'access-token: 1xz3gN64bhrJOlYJRdexx
 curl -XPOST -H 'Content-Type: application/json' -H 'access-token: 1xz3gN64bhrJOlYJRdexxg' -H 'client: 6gO1qogZwUtz6CsYZpjlNw' -H "uid: john@email.com" -H 'Token-Type: Bearer' -d '{"datatype": "text", "data": "{'content':'this\ is\ a\ test'}", "user_id": 1}' 'localhost:3000/api/v1/customs.json'
 
 
+curl -H 'Content-Type: application/json' -H 'access-token: 1xz3gN64bhrJOlYJRdexxg' -H 'client: 6gO1qogZwUtz6CsYZpjlNw' -H "uid: john@email.com" -H 'Token-Type: Bearer' 'localhost:3000/api/v1/customs/user/1.json'
+
+curl -H 'Content-Type: application/json' -H 'access-token: 1xz3gN64bhrJOlYJRdexxg' -H 'client: 6gO1qogZwUtz6CsYZpjlNw' -H "uid: john@email.com" -H 'Token-Type: Bearer' 'localhost:3000/api/v1/customs/user/1/type/json.json'
+
+curl -XPUT -H 'Content-Type: application/json' -H 'access-token: 1xz3gN64bhrJOlYJRdexxg' -H 'client: 6gO1qogZwUtz6CsYZpjlNw' -H "uid: john@email.com" -H 'Token-Type: Bearer' -d '{"data": "{'content':'this\ is\ NOT\ a\ test'}"}' 'localhost:3000/api/v1/customs/2.json'
