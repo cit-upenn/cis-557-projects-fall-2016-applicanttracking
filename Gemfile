@@ -46,6 +46,7 @@ gem 'paperclip'
 
 group :production do
   gem 'pg'
+  gem 'newrelic_rpm' # heroku activity monitor
 end
 
 
