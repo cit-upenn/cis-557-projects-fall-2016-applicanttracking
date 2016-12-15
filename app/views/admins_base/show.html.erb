@@ -1,27 +1,38 @@
 <%- model_class = Admin -%>
+
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:api_auth_token) %>:</strong></dt>
-  <dd><%= @admin.api_auth_token %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @admin.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
-  <dd><%= @admin.first_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:middle_name) %>:</strong></dt>
-  <dd><%= @admin.middle_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
-  <dd><%= @admin.last_name %></dd>
-</dl>
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              admins_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_admin_path(@admin), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              admin_path(@admin),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<%= render :partial => 'form' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+	  <th><%= model_class.human_attribute_name(:id) %></th>
+	  <th><%= model_class.human_attribute_name(:score) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+	  <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sorted_users.each do |user| %>
+      <tr>
+		<td><%= link_to user.actual_user.id, user_admins_url(user.actual_user) %></td>
+		<td><%= link_to user.score, user_path(user.actual_user)%></td>
+		<td><%= user.actual_user.first_name%></td>
+		<td><%= user.actual_user.last_name%></td>
+		<td><%= user.actual_user.email%></td>
+		<td><%= user.actual_user.created_at%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+					  
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_path,:class => 'btn btn-primary' %>

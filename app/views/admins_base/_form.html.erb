@@ -1,4 +1,4 @@
-<%= form_for @admin, :html => { :class => "form-horizontal admin" } do |f| %>
+<%= form_for @admin, :html => { :id => "demo", :class => "form-horizontal admin collapse" } do |f| %>
 
   <% if @admin.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -16,11 +16,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :api_auth_token, :class => 'control-label col-lg-2' %>
+    <%= f.label :passion_metric, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :api_auth_token, :class => 'form-control' %>
+      <%= f.number_field :passion_metric, :class => 'form-control', :step => 0.5 %>
     </div>
-    <%=f.error_span(:api_auth_token) %>
+    <%=f.error_span(:passion_metric) %>
   </div>
   <div class="form-group">
     <%= f.label :email, :class => 'control-label col-lg-2' %>

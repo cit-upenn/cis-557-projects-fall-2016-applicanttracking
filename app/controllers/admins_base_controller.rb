@@ -3,26 +3,59 @@ class AdminsBaseController < ApplicationController
   # GET /admins
   # GET /admins.json
   def index
-    @admins = Admin.all
+    puts "called admin index"
+
+    #set_admin
+    
+  end
+  
+  def user
+    puts "admin_base_controller user def is called"
+    @user = User.find(params[:id])
+  end
+  
+  class User_score
+    attr_accessor :score, :actual_user
   end
 
   # GET /admins/1
   # GET /admins/1.json
   def show
+     puts "called admin show"
+     @users = User.all
+     metrics = {:travel=> 0.23, :sport=> 0.03, :personal_projects => 0.23, :voluntary=> 2.5, :achievements => 0.06, :passion => 0.06, :study => 0.11, :work => 0.11, :self_reflection => 0.11}
+     puts metrics[:work]
+     users_array = []
+     User.all.each do |user|
+       u = User_score.new
+       u.score = (user.travel_score * metrics[:travel]) + (user.personal_projects_score * metrics[:personal_projects]) + (user.voluntary_score * metrics[:voluntary]) + (user.achievements_score * metrics[:achievements]) + (user.passion_score * metrics[:passion]) + (user.study_score * metrics[:study]) + (user.work_score * metrics[:work])+ (user.self_reflection_score * metrics[:self_reflection]) 
+       u.actual_user = user
+       users_array.push(u)
+     end
+    
+     users_array.sort_by! {|user| user.score}
+     puts"starting to print id, first_name, and score"
+     users_array.each do |sorted_user|
+       puts "id: #{sorted_user.actual_user.id}, name: #{sorted_user.actual_user.first_name}, #{sorted_user.score}"
+     end
+     @sorted_users = users_array
   end
 
   # GET /admins/new
   def new
+    puts "called admin new"
     @admin = Admin.new
   end
 
   # GET /admins/1/edit
   def edit
+    puts "called admin edit"
   end
 
   # POST /admins
   # POST /admins.json
   def create
+    puts "called admin create"
     @admin = Admin.new(admin_params)
 
     respond_to do |format|
@@ -39,6 +72,7 @@ class AdminsBaseController < ApplicationController
   # PATCH/PUT /admins/1
   # PATCH/PUT /admins/1.json
   def update
+    puts "called admin update"
     respond_to do |format|
       if @admin.update(admin_params)
         format.html { redirect_to @admin, notice: 'Admin was successfully updated.' }
@@ -53,6 +87,7 @@ class AdminsBaseController < ApplicationController
   # DELETE /admins/1
   # DELETE /admins/1.json
   def destroy
+    puts "called admin destroyed"
     @admin.destroy
     respond_to do |format|
       format.html { redirect_to admins_url, notice: 'Admin was successfully destroyed.' }
@@ -63,15 +98,18 @@ class AdminsBaseController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
+      puts "called set_admin"
       @admin = Admin.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
       if request.format == 'application/json'
-        params.permit(:api_auth_token, :email, :first_name, :middle_name, :last_name)
+        params.permit(:api_auth_token, :email, :first_name, :middle_name, :last_name,
+        :travel_metric, :sport_metric, :personal_projects_metric, :voluntary_metric, :achievements_metric, :passion_metric, :study_metric, :work_metric, :self_reflection_metric)
       else
-        params.require(:admin).permit(:api_auth_token, :email, :first_name, :middle_name, :last_name)
+        params.require(:admin).permit(:api_auth_token, :email, :first_name, :middle_name, :last_name,
+                :travel_metric, :sport_metric, :personal_projects_metric, :voluntary_metric, :achievements_metric, :passion_metric, :study_metric, :work_metric, :self_reflection_metric)
       end
     end
 end

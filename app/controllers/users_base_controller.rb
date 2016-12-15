@@ -28,7 +28,6 @@ class UsersBaseController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -41,8 +40,10 @@ class UsersBaseController < ApplicationController
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
+  # PATCH/PUT /users/1.jsonrequire "users_base_controller"
+  
   def update
+    @admin = Admin.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -77,7 +78,8 @@ class UsersBaseController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       if request.format == 'application/json'
-        params.permit(:first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted)
+        params.permit(:first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :travel_score, 
+        :sport_score, :personal_projects_score, :voluntary_score, :achievements_score, :passion_score, :study_score, :work_score, :self_reflection_score)
       else
         params.require(:user).permit(:first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted)
       end

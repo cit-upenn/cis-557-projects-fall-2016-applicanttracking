@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210012815) do
+ActiveRecord::Schema.define(version: 20161214210013) do
 
   create_table "admin_credentials", force: :cascade do |t|
     t.string   "email",                  default: "",      null: false
@@ -41,17 +41,26 @@ ActiveRecord::Schema.define(version: 20161210012815) do
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "encrypted_password",       default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",            default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.float    "travel_metric"
+    t.float    "sport_metric"
+    t.float    "personal_projects_metric"
+    t.float    "voluntary_metric"
+    t.float    "achievements_metric"
+    t.float    "passion_metric"
+    t.float    "study_metric"
+    t.float    "work_metric"
+    t.float    "self_reflection_metric"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
@@ -187,21 +196,7 @@ ActiveRecord::Schema.define(version: 20161210012815) do
   add_index "user_credentials", ["reset_password_token"], name: "index_user_credentials_on_reset_password_token", unique: true
   add_index "user_credentials", ["uid", "provider"], name: "index_user_credentials_on_uid_and_provider", unique: true
 
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.date     "dob"
-    t.integer  "phone",          limit: 8
-    t.string   "email"
-    t.string   "street_address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
-    t.string   "zipcode"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.boolean  "submitted"
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
