@@ -28,4 +28,14 @@ class AdminCredential < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
   #include DeviseTokenAuth::Concerns::Admin
+  
+  validates :travel_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :sport_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :personal_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :voluntary_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :achievements_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :passion_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :study_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :work_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :self_reflection_metric, :numericality => {greater_than_or_equal_to: 0}
 end
