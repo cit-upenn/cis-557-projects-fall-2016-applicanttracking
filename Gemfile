@@ -44,6 +44,8 @@ gem 'paperclip'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
 group :production do
   gem 'pg'
   gem 'newrelic_rpm' # heroku activity monitor
@@ -58,7 +60,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'bootstrap-sass', '~> 3.2.0'
+  
   gem 'autoprefixer-rails'
 
   # Use sqlite3 as the database for Active Record
