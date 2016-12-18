@@ -51,7 +51,7 @@ gem 'autoprefixer-rails'
 group :production do
   gem 'pg'
   gem 'newrelic_rpm' # heroku activity monitor
-  gem '12factor'
+  gem 'rails_12factor'
 end
 
 
