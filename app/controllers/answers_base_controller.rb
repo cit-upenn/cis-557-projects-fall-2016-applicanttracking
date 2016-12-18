@@ -3,7 +3,10 @@ class AnswersBaseController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    respond_to do |format|
+      format.html { redirect_to new_answer_url }
+      format.json { @answers = Answer.all }
+    end
   end
 
   # POST /upload
@@ -32,7 +35,11 @@ class AnswersBaseController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = Answer.new
+    if Answer.exists?(current_user_credential.answers.first) then
+      @answer = current_user_credential.answers.first
+    else
+      @answer = Answer.new
+    end
   end
 
   # GET /answers/1/edit
@@ -52,7 +59,7 @@ class AnswersBaseController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        format.html { redirect_to overview_users_url, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
@@ -66,7 +73,7 @@ class AnswersBaseController < ApplicationController
   def update
     respond_to do |format|
       if @answer.update(answer_params)
-        format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
+        format.html { redirect_to overview_users_url, notice: 'Answer was successfully updated.' }
         format.json { render :show, status: :ok, location: @answer }
       else
         format.html { render :edit }
@@ -100,7 +107,7 @@ class AnswersBaseController < ApplicationController
       if request.format == 'application/json'
         params.permit(:text_answer, :data_type, :question_id, :user_id, :video)
       else
-        params.require(:answer).permit(:text_answer, :data_type, :question_id, :user_id, :video)
+        params.permit(:text_answer, :data_type, :question_id, :user_id, :video)
       end
     end
 end

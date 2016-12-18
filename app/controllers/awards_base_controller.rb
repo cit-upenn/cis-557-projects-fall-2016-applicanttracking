@@ -5,7 +5,7 @@ class AwardsBaseController < ApplicationController
   # GET /awards.json
   def index
     respond_to do |format|
-      format.html { redirect_to new_experience_url }
+      format.html { redirect_to new_award_url }
       format.json { @awards = Award.all }
     end
   end

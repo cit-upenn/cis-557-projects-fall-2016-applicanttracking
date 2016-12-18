@@ -51,6 +51,7 @@
 #                                          PATCH    /questions/:id(.:format)                          questions#update
 #                                          PUT      /questions/:id(.:format)                          questions#update
 #                                          DELETE   /questions/:id(.:format)                          questions#destroy
+#                           overview_users GET      /users/overview(.:format)                         users#overview
 #                                    users GET      /users(.:format)                                  users#index
 #                                          POST     /users(.:format)                                  users#create
 #                                 new_user GET      /users/new(.:format)                              users#new
@@ -69,21 +70,13 @@
 #                                          PATCH    /admins/:id(.:format)                             admins#update
 #                                          PUT      /admins/:id(.:format)                             admins#update
 #                                          DELETE   /admins/:id(.:format)                             admins#destroy
+#                                          GET      /customs/user/:id(.:format)                       customs#user
+#                                          GET      /customs/user/:id/type/:datatype(.:format)        customs#type
 #                                  customs GET      /customs(.:format)                                customs#index
 #                                          POST     /customs(.:format)                                customs#create
 #                               new_custom GET      /customs/new(.:format)                            customs#new
 #                              edit_custom GET      /customs/:id/edit(.:format)                       customs#edit
 #                                   custom GET      /customs/:id(.:format)                            customs#show
-#                                          PATCH    /customs/:id(.:format)                            customs#update
-#                                          PUT      /customs/:id(.:format)                            customs#update
-#                                          DELETE   /customs/:id(.:format)                            customs#destroy
-#                                          GET      /customs/user/:id(.:format)                       customs#user
-#                                          GET      /customs/user/:id/type/:datatype(.:format)        customs#type
-#                                          GET      /customs(.:format)                                customs#index
-#                                          POST     /customs(.:format)                                customs#create
-#                                          GET      /customs/new(.:format)                            customs#new
-#                                          GET      /customs/:id/edit(.:format)                       customs#edit
-#                                          GET      /customs/:id(.:format)                            customs#show
 #                                          PATCH    /customs/:id(.:format)                            customs#update
 #                                          PUT      /customs/:id(.:format)                            customs#update
 #                                          DELETE   /customs/:id(.:format)                            customs#destroy
@@ -166,6 +159,7 @@
 #                                          GET|POST /omniauth/:provider/callback(.:format)            devise_token_auth/omniauth_callbacks#redirect_callbacks
 #                                          GET|POST /omniauth/failure(.:format)                       devise_token_auth/omniauth_callbacks#omniauth_failure
 #                                          GET      /api/v1/auth/admin/:provider(.:format)            redirect(301)
+#                        overview_api_user GET      /api/v1/users/:id/overview(.:format)              api/v1/users#overview
 #                                api_users GET      /api/v1/users(.:format)                           api/v1/users#index
 #                                          POST     /api/v1/users(.:format)                           api/v1/users#create
 #                             new_api_user GET      /api/v1/users/new(.:format)                       api/v1/users#new
@@ -199,14 +193,6 @@
 #                                          PATCH    /api/v1/githubs/:id(.:format)                     api/v1/githubs#update
 #                                          PUT      /api/v1/githubs/:id(.:format)                     api/v1/githubs#update
 #                                          DELETE   /api/v1/githubs/:id(.:format)                     api/v1/githubs#destroy
-#                              api_customs GET      /api/v1/customs(.:format)                         api/v1/customs#index
-#                                          POST     /api/v1/customs(.:format)                         api/v1/customs#create
-#                           new_api_custom GET      /api/v1/customs/new(.:format)                     api/v1/customs#new
-#                          edit_api_custom GET      /api/v1/customs/:id/edit(.:format)                api/v1/customs#edit
-#                               api_custom GET      /api/v1/customs/:id(.:format)                     api/v1/customs#show
-#                                          PATCH    /api/v1/customs/:id(.:format)                     api/v1/customs#update
-#                                          PUT      /api/v1/customs/:id(.:format)                     api/v1/customs#update
-#                                          DELETE   /api/v1/customs/:id(.:format)                     api/v1/customs#destroy
 #                        upload_api_answer POST     /api/v1/answers/:id/upload(.:format)              api/v1/answers#upload
 #                                          GET      /api/v1/answers/user/:id(.:format)                api/v1/answers#user
 #                                          GET      /api/v1/answers/type/:data_type(.:format)         api/v1/answers#type
@@ -220,11 +206,11 @@
 #                                          DELETE   /api/v1/answers/:id(.:format)                     api/v1/answers#destroy
 #                                          GET      /api/v1/customs/user/:id(.:format)                api/v1/customs#user
 #                                          GET      /api/v1/customs/user/:id/type/:datatype(.:format) api/v1/customs#type
-#                                          GET      /api/v1/customs(.:format)                         api/customs#index
+#                              api_customs GET      /api/v1/customs(.:format)                         api/customs#index
 #                                          POST     /api/v1/customs(.:format)                         api/customs#create
-#                                          GET      /api/v1/customs/new(.:format)                     api/customs#new
-#                                          GET      /api/v1/customs/:id/edit(.:format)                api/customs#edit
-#                                          GET      /api/v1/customs/:id(.:format)                     api/customs#show
+#                           new_api_custom GET      /api/v1/customs/new(.:format)                     api/customs#new
+#                          edit_api_custom GET      /api/v1/customs/:id/edit(.:format)                api/customs#edit
+#                               api_custom GET      /api/v1/customs/:id(.:format)                     api/customs#show
 #                                          PATCH    /api/v1/customs/:id(.:format)                     api/customs#update
 #                                          PUT      /api/v1/customs/:id(.:format)                     api/customs#update
 #                                          DELETE   /api/v1/customs/:id(.:format)                     api/customs#destroy
@@ -295,7 +281,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users do
+  	collection do
+  	  get 'overview', as: :overview
+  	end
+  end
+
   resources :admins do
     member do 
       post '/' => 'admins#update', as: :update
@@ -346,7 +337,13 @@ Rails.application.routes.draw do
         # token auth devise features at api/v1/auth
         mount_devise_token_auth_for 'UserCredential', at: 'auth'
         mount_devise_token_auth_for 'AdminCredential', at: 'auth/admin'
-        resources :users, controller: 'v1/users'
+
+        resources :users, controller: 'v1/users' do
+        	collection do
+        	  get 'overview', as: :overview
+        	end
+       	end
+
         resources :admins, controller: 'v1/admins' do
             collection do
               get 'user/:id' => 'admins#user', as: :user

@@ -18,6 +18,10 @@ class UsersBaseController < ApplicationController
   def show
   end
 
+  def overview
+    @user = current_user_credential.user
+  end
+
   # GET /users/new
   def new
     if User.exists?(current_user_credential.user) then
