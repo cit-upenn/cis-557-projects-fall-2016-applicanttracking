@@ -14,7 +14,47 @@
       </div>
     </div>
   <% end %>
+  
+  <div class="form-group">
+    <%= f.label :travel_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :travel_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:travel_metric) %>
+  </div>
 
+  <div class="form-group">
+    <%= f.label :sport_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :sport_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:sport_metric) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :personal_projects_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :personal_projects_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:personal_projects_metric) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :voluntary_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :voluntary_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:voluntary_metric) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :achievements_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :achievements_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:achievements_metric) %>
+  </div>
+  
   <div class="form-group">
     <%= f.label :passion_metric, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -22,13 +62,26 @@
     </div>
     <%=f.error_span(:passion_metric) %>
   </div>
-
+  
+  <div class="form-group">
+    <%= f.label :work_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :work_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:work_metric) %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :self_reflection_metric, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+	<%= f.number_field :self_reflection_metric, :class => 'form-control', :step => :any%>
+    </div>
+    <%=f.error_span(:self_reflection_metric) %>
+  </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                admins_path, :class => 'btn btn-default' %>
+      <%= f.submit "Save Ranking Metrics", :class => 'btn btn-primary' %>
     </div>
   </div>
 
