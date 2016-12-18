@@ -50,11 +50,11 @@ class AnswersBaseController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
-    if params[:answer] then
-      @answer = Answer.new({"video" =>  params[:answer][:video]})
-    end
 
     if request.format != "application/json" then
+      if params[:answer] then
+        @answer = Answer.new({"video" =>  params[:answer][:video]})
+      end
       @answer.user = current_user_credential.user
       @answer.question = Question.first
       @answer.data_type = "video"

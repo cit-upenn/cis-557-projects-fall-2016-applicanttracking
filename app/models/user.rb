@@ -18,7 +18,7 @@
 #  updated_at              :datetime         not null
 #  submitted               :boolean
 #  user_credential_id      :integer
-#  travel_score            :flaot            default("0")
+#  travel_score            :float            default(0.0)
 #  sport_score             :float            default(0.0)
 #  personal_projects_score :float            default(0.0)
 #  voluntary_score         :float            default(0.0)
@@ -28,7 +28,6 @@
 #  work_score              :float            default(0.0)
 #  self_reflection_score   :float            default(0.0)
 #
-
 
 class User < ActiveRecord::Base
     has_many :answers
