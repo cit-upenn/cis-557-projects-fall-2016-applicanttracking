@@ -147,26 +147,6 @@ ActiveRecord::Schema.define(version: 20161217235325) do
 
   add_index "extracurriculars", ["user_id"], name: "index_extracurriculars_on_user_id"
 
-  create_table "githubs", force: :cascade do |t|
-    t.string   "path"
-    t.string   "username"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "githubs", ["user_id"], name: "index_githubs_on_user_id"
-
-  create_table "linkedins", force: :cascade do |t|
-    t.string   "path"
-    t.string   "username"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "linkedins", ["user_id"], name: "index_linkedins_on_user_id"
-
   create_table "questions", force: :cascade do |t|
     t.string   "question_type"
     t.string   "prompt"
@@ -196,24 +176,7 @@ ActiveRecord::Schema.define(version: 20161217235325) do
   add_index "user_credentials", ["reset_password_token"], name: "index_user_credentials_on_reset_password_token", unique: true
   add_index "user_credentials", ["uid", "provider"], name: "index_user_credentials_on_uid_and_provider", unique: true
 
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.date     "dob"
-    t.integer  "phone",              limit: 8
-    t.string   "email"
-    t.string   "street_address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
-    t.string   "zipcode"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "submitted"
-    t.integer  "user_credential_id"
-  end
-
-  add_index "users", ["user_credential_id"], name: "index_users_on_user_credential_id"
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
