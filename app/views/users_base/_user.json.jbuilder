@@ -1,2 +1,2 @@
-json.extract! user, :id, :first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :created_at, :updated_at
+json.extract! user, :id, :first_name, :middle_name, :last_name, :dob, :phone, :email, :street_address, :city, :state, :country, :zipcode, :submitted, :created_at, :updated_at, :user_credential_id, :travel_score, :sport_score, :personal_projects_score, :voluntary_score, :achievements_score, :passion_score, :study_score, :work_score, :self_reflection_score,
 json.url user_url(user, format: :json)

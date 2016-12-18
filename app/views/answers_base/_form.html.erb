@@ -16,28 +16,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :text_answer, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :text_answer, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:text_answer) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :data_type, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :data_type, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:data_type) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :question_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :question_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:question_id) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :video, :class => 'control-label col-lg-2' %>
+    <%= f.label "Please upload a video about yourself?", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.file_field :video %>
     </div>

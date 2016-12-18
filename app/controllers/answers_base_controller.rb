@@ -44,6 +44,12 @@ class AnswersBaseController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
 
+    if request.format != "application/json" then
+      @answer.user = current_user_credential.user
+      @answer.question = Question.first
+      @answer.data_type = "video"
+    end
+
     respond_to do |format|
       if @answer.save
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
