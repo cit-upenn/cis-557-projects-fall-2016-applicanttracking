@@ -83,7 +83,7 @@
     <div class="col-lg-10">
       <%= f.text_field :country, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:country) %></
+    <%=f.error_span(:country) %>
   </div>
   <div class="form-group">
     <%= f.label :zipcode, :class => 'control-label col-lg-2' %>
@@ -95,7 +95,7 @@
   <div class="form-group">
     <%= f.label :submitted, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.check_box :submitted, :class => 'form-control' %>
+      <%= f.check_box :submitted %>
     </div>
     <%=f.error_span(:submitted) %>
   </div>
@@ -103,8 +103,6 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <!--%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn btn-default' %-->
     </div>
   </div>
 
