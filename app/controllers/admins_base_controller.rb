@@ -3,12 +3,10 @@ class AdminsBaseController < ApplicationController
   # GET /admins
   # GET /admins.json
   def index
-    puts "called admin index"
     redirect_to action: "show", id: current_admin_credential.id
   end
   
   def user
-    puts "admin_base_controller user"
     @user = User.find(params[:id])
     @awards = Award.where(:user_id => params[:id])
     @educations = Education.where(:user_id => params[:id])
@@ -20,15 +18,12 @@ class AdminsBaseController < ApplicationController
   end
   
   def update
-    puts "called admin_update"
     @admin = current_admin_credential
     respond_to do |format|
       if @admin.update(admin_params)
-        puts "within if"
         format.html { redirect_to admins_path, notice: 'Admin was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin}
       else
-        puts "within else"
         format.html { redirect_to admins_path }
         format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
@@ -47,18 +42,19 @@ class AdminsBaseController < ApplicationController
      users_array = []
      User.all.each do |user|
        u = User_score.new
-       u.score = (user.travel_score * @admin.travel_metric) + (user.personal_projects_score * @admin.personal_projects_metric)
-       + (user.voluntary_score * @admin.voluntary_metric) + (user.achievements_score * @admin.achievements_metric)
-       + (user.passion_score * @admin.passion_metric) + (user.study_score * @admin.study_metric)
-       + (user.work_score * @admin.work_metric)+ (user.self_reflection_score * @admin.self_reflection_metric)
+       scores = Array[user.travel_score,user.personal_projects_score,user.voluntary_score, user.achievements_score, user.passion_score,user.study_score, user.work_score, user.self_reflection_score] 
+       metrics = Array[@admin.travel_metric,@admin.personal_projects_metric,@admin.voluntary_metric, @admin.achievements_metric, @admin.passion_metric, @admin.study_metric, @admin.work_metric, @admin.self_reflection_metric]
+       u.score = 0;
+       scores.zip(metrics).each do |s, m|
+         if s != NIL && m != NIL
+           u.score += s*m
+         end
+      end
        u.actual_user = user
        users_array.push(u)
      end
-  
      users_array.sort_by! {|user| user.score}
-     puts"starting to print id, first_name, and score"
      users_array.each do |sorted_user|
-       puts "id: #{sorted_user.actual_user.id}, name: #{sorted_user.actual_user.first_name}, #{sorted_user.score}"
      end
      @sorted_users = users_array
   end
