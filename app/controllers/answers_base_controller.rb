@@ -50,6 +50,9 @@ class AnswersBaseController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
+    if params[:answer] then
+      @answer = Answer.new({"video" =>  params[:answer][:video]})
+    end
 
     if request.format != "application/json" then
       @answer.user = current_user_credential.user
@@ -107,7 +110,7 @@ class AnswersBaseController < ApplicationController
       if request.format == 'application/json'
         params.permit(:text_answer, :data_type, :question_id, :user_id, :video)
       else
-        params.permit(:text_answer, :data_type, :question_id, :user_id, :video)
+        params.permit(:text_answer, :data_type, :question_id, :user_id, :video, :answer)
       end
     end
 end

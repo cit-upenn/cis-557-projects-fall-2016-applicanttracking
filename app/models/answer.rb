@@ -24,5 +24,5 @@ class Answer < ActiveRecord::Base
   validates :question, presence: {message: "This question doesn't exist"}
 
   has_attached_file :video
-  validates_attachment :video, content_type: { content_type: ["video/mp4"] }
+  validates_attachment :video, :presence => true, content_type: { content_type: ["video/mp4"] }
 end

@@ -32,7 +32,7 @@
   <div class="form-group">
     <%= f.label :date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_select :date, :class => 'form-control' %>
+      <%= f.date_select :date, :class => 'form-control', start_year: 1900, end_year: 2016 %>
     </div>
     <%=f.error_span(:date) %>
   </div>
