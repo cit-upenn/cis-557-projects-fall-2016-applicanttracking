@@ -34,10 +34,11 @@ class AdminsBaseController < ApplicationController
     attr_accessor :score, :actual_user
   end
 
+
   # GET /admins/1
   # GET /admins/1.json
   def show
-     puts "called admin show"
+     #puts "called admin show"
      @users = User.all
      users_array = []
      User.all.each do |user|
@@ -116,7 +117,7 @@ class AdminsBaseController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
-      puts "called set_admin"
+      #puts "called set_admin"
       @admin = current_admin_credential
     end
     
