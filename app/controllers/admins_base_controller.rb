@@ -13,6 +13,11 @@ class AdminsBaseController < ApplicationController
     #@awards = Award.all.find_by user_id: params[:id]
     @awards = Award.where(:user_id => params[:id])
     @educations = Education.where(:user_id => params[:id])
+    @answers = Answer.where(:user_id => params[:id])
+    @customs = Custom.where(:user_id => params[:id])
+    @experiences = Experience.where(:user_id => params[:id])
+    @extracurriculars = Extracurricular.where(:user_id => params[:id])
+    @customs = Custom.where(:user_id => params[:id])
   end
   
   def update

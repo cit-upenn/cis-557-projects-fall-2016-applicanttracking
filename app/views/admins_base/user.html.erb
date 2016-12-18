@@ -31,19 +31,6 @@
   <dd><%= @user.submitted %></dd>
 </dl>
 
-
-<div> Awards </div>
-<dl class="dl-horizontal">
-<% @awards.each do |award| %>
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= award.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= award.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
-  <dd><%= award.date %></dd>
-<%end%>
-</dl>
-
 <div> Educations </div>
 <dl class="dl-horizontal">
 <% @educations.each do |education| %>
@@ -66,8 +53,83 @@
 <%end%>
 </dl>
 
+<div> Experiences </div>
+<dl class="dl-horizontal">
+<% @experiences.each do |experience| %>
+  <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
+  <dd><%= experience.start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= experience.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current) %>:</strong></dt>
+  <dd><%= experience.current %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= experience.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:company) %>:</strong></dt>
+  <dd><%= experience.company %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= experience.description %></dd>
+<%end%>
+</dl>
 
+<div> Extracurriculars </div>
+<dl class="dl-horizontal">
+<% @extracurriculars.each do |extracurricular| %>
+  <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
+  <dd><%= extracurricular.start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= extracurricular.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:organization) %>:</strong></dt>
+  <dd><%= extracurricular.organization %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current) %>:</strong></dt>
+  <dd><%= extracurricular.current %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:position) %>:</strong></dt>
+  <dd><%= extracurricular.position %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= extracurricular.description %></dd>
+<%end%>
+</dl>
 
+<div> Awards </div>
+<dl class="dl-horizontal">
+<% @awards.each do |award| %>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= award.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= award.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= award.date %></dd>
+<%end%>
+</dl>
+
+<div> Answers </div>
+<dl class="dl-horizontal">
+<% @answers.each do |answer| %>
+  <dt><strong><%= model_class.human_attribute_name(:text_answer) %>:</strong></dt>
+  <dd><%= answer.text_answer %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_type) %>:</strong></dt>
+  <dd><%= answer.data_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:question_id) %>:</strong></dt>
+  <dd><%= answer.question_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= answer.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:video) %>:</strong></dt>
+  <% if answer.video.present? %>
+    <dd><%= link_to "video", answer.video.url %></dd>
+  <% end %>
+<%end%>
+</dl>
+
+<div> Customs </div>
+<dl class="dl-horizontal">
+<% @customs.each do |custom| %>
+  <dt><strong><%= model_class.human_attribute_name(:datatype) %>:</strong></dt>
+  <dd><%= custom.datatype %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= custom.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= custom.user_id %></dd>
+<%end%>
+</dl>
 
 
 
