@@ -4,7 +4,10 @@ class AwardsBaseController < ApplicationController
   # GET /awards
   # GET /awards.json
   def index
-    @awards = Award.all
+    respond_to do |format|
+      format.html { redirect_to new_experience_url }
+      format.json { @awards = Award.all }
+    end
   end
 
   # GET /awards/1
@@ -14,7 +17,11 @@ class AwardsBaseController < ApplicationController
 
   # GET /awards/new
   def new
-    @award = Award.new
+    if Award.exists?(current_user_credential.awards.first) then
+      @award = current_user_credential.awards.first
+    else
+      @award = Award.new
+    end
   end
 
   # GET /awards/1/edit
@@ -31,9 +38,13 @@ class AwardsBaseController < ApplicationController
   def create
     @award = Award.new(award_params)
 
+    if request.format != "application/json" then
+      @award.user = current_user_credential.user
+    end
+
     respond_to do |format|
       if @award.save
-        format.html { redirect_to @award, notice: 'Award was successfully created.' }
+        format.html { redirect_to new_answer_url, notice: 'Award was successfully created.' }
         format.json { render :show, status: :created, location: @award }
       else
         format.html { render :new }
@@ -47,7 +58,7 @@ class AwardsBaseController < ApplicationController
   def update
     respond_to do |format|
       if @award.update(award_params)
-        format.html { redirect_to @award, notice: 'Award was successfully updated.' }
+        format.html { redirect_to new_answer_url, notice: 'Award was successfully updated.' }
         format.json { render :show, status: :ok, location: @award }
       else
         format.html { render :edit }

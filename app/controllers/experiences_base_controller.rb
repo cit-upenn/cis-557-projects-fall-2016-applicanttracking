@@ -3,7 +3,10 @@ class ExperiencesBaseController < ApplicationController
   # GET /experiences
   # GET /experiences.json
   def index
-    @experiences = Experience.all
+    respond_to do |format|
+      format.html { redirect_to new_experience_url }
+      format.json { @experiences = Experience.all }
+    end
   end
 
   # GET /experiences/1
@@ -13,7 +16,11 @@ class ExperiencesBaseController < ApplicationController
 
   # GET /experiences/new
   def new
-    @experience = Experience.new
+    if Experience.exists?(current_user_credential.experiences.first) then
+      @experience = current_user_credential.experiences.first
+    else
+      @experience = Experience.new
+    end
   end
 
   # GET /experiences/1/edit
@@ -21,7 +28,7 @@ class ExperiencesBaseController < ApplicationController
   end
 
   def user
-    @experiences = Experience.where(user: params[:id])
+    @experience = Experience.where(user: params[:id])
     render :index
   end
 
@@ -30,9 +37,13 @@ class ExperiencesBaseController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
 
+    if request.format != "application/json" then
+      @experience.user = current_user_credential.user
+    end
+
     respond_to do |format|
       if @experience.save
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+        format.html { redirect_to new_extracurricular_url, notice: 'Experience was successfully created.' }
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new }
@@ -46,7 +57,7 @@ class ExperiencesBaseController < ApplicationController
   def update
     respond_to do |format|
       if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+        format.html { redirect_to new_extracurricular_url, notice: 'Experience was successfully updated.' }
         format.json { render :show, status: :ok, location: @experience }
       else
         format.html { render :edit }

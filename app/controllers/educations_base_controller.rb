@@ -3,7 +3,10 @@ class EducationsBaseController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.all
+    respond_to do |format|
+      format.html { redirect_to new_education_url }
+      format.json { @educations = Education.all }
+    end
   end
 
   # GET /educations/1
@@ -13,7 +16,11 @@ class EducationsBaseController < ApplicationController
 
   # GET /educations/new
   def new
-    @education = Education.new
+    if Education.exists?(current_user_credential.educations.first) then
+      @education = current_user_credential.educations.first
+    else
+      @education = Education.new
+    end
   end
 
   # GET /educations/1/edit
@@ -30,9 +37,13 @@ class EducationsBaseController < ApplicationController
   def create
     @education = Education.new(education_params)
 
+    if request.format != "application/json" then
+      @education.user = current_user_credential.user
+    end
+
     respond_to do |format|
       if @education.save
-        format.html { redirect_to @education, notice: 'Education was successfully created.' }
+        format.html { redirect_to new_experience_url, notice: 'Education was successfully created.' }
         format.json { render :show, status: :created, location: @education }
       else
         format.html { render :new }
@@ -46,7 +57,7 @@ class EducationsBaseController < ApplicationController
   def update
     respond_to do |format|
       if @education.update(education_params)
-        format.html { redirect_to @education, notice: 'Education was successfully updated.' }
+        format.html { redirect_to new_experience_url, notice: 'Education was successfully updated.' }
         format.json { render :show, status: :ok, location: @education }
       else
         format.html { render :edit }
