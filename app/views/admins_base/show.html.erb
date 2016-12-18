@@ -22,8 +22,9 @@
   <tbody>
     <% @sorted_users.each do |user| %>
       <tr>
+		<%puts "id: #{user.actual_user.id} user.score: #{user.score}"%>
 		<td><%= link_to user.actual_user.id, user_admins_url(user.actual_user) %></td>
-		<td><%= link_to user.score, user_path(user.actual_user)%></td>
+		<td><%= user.score%></td>
 		<td><%= user.actual_user.first_name%></td>
 		<td><%= user.actual_user.last_name%></td>
 		<td><%= user.actual_user.email%></td>
@@ -32,7 +33,3 @@
     <% end %>
   </tbody>
 </table>
-
-					  
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_admin_path,:class => 'btn btn-primary' %>

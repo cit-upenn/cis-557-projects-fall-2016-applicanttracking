@@ -43,7 +43,7 @@ class UsersBaseController < ApplicationController
   # PATCH/PUT /users/1.jsonrequire "users_base_controller"
   
   def update
-    @admin = Admin.find(params[:id])
+    #@admin = Admin.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

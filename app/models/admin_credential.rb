@@ -31,7 +31,7 @@ class AdminCredential < ActiveRecord::Base
   
   validates :travel_metric, :numericality => {greater_than_or_equal_to: 0}
   validates :sport_metric, :numericality => {greater_than_or_equal_to: 0}
-  validates :personal_metric, :numericality => {greater_than_or_equal_to: 0}
+  validates :personal_projects_metric, :numericality => {greater_than_or_equal_to: 0}
   validates :voluntary_metric, :numericality => {greater_than_or_equal_to: 0}
   validates :achievements_metric, :numericality => {greater_than_or_equal_to: 0}
   validates :passion_metric, :numericality => {greater_than_or_equal_to: 0}
