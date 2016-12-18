@@ -34,6 +34,7 @@ class AdminsBaseController < ApplicationController
     attr_accessor :score, :actual_user
   end
 
+
   # GET /admins/1
   # GET /admins/1.json
   def show
