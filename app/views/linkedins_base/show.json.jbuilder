@@ -1,1 +1,0 @@
-json.partial! "linkedins_base/linkedin", linkedin: @linkedin

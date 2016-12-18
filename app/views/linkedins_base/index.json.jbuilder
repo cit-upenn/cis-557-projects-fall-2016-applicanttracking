@@ -1,1 +1,0 @@
-json.array! @linkedins, partial: 'linkedins_base/linkedin', as: :linkedin

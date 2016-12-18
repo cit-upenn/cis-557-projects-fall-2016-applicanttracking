@@ -59,6 +59,7 @@
 #                                          PATCH    /users/:id(.:format)                              users#update
 #                                          PUT      /users/:id(.:format)                              users#update
 #                                          DELETE   /users/:id(.:format)                              users#destroy
+#                             update_admin POST     /admins/:id(.:format)                             admins#update
 #                              user_admins GET      /admins/user/:id(.:format)                        admins#user
 #                                   admins GET      /admins(.:format)                                 admins#index
 #                                          POST     /admins(.:format)                                 admins#create
@@ -68,22 +69,6 @@
 #                                          PATCH    /admins/:id(.:format)                             admins#update
 #                                          PUT      /admins/:id(.:format)                             admins#update
 #                                          DELETE   /admins/:id(.:format)                             admins#destroy
-#                                linkedins GET      /linkedins(.:format)                              linkedins#index
-#                                          POST     /linkedins(.:format)                              linkedins#create
-#                             new_linkedin GET      /linkedins/new(.:format)                          linkedins#new
-#                            edit_linkedin GET      /linkedins/:id/edit(.:format)                     linkedins#edit
-#                                 linkedin GET      /linkedins/:id(.:format)                          linkedins#show
-#                                          PATCH    /linkedins/:id(.:format)                          linkedins#update
-#                                          PUT      /linkedins/:id(.:format)                          linkedins#update
-#                                          DELETE   /linkedins/:id(.:format)                          linkedins#destroy
-#                                  githubs GET      /githubs(.:format)                                githubs#index
-#                                          POST     /githubs(.:format)                                githubs#create
-#                               new_github GET      /githubs/new(.:format)                            githubs#new
-#                              edit_github GET      /githubs/:id/edit(.:format)                       githubs#edit
-#                                   github GET      /githubs/:id(.:format)                            githubs#show
-#                                          PATCH    /githubs/:id(.:format)                            githubs#update
-#                                          PUT      /githubs/:id(.:format)                            githubs#update
-#                                          DELETE   /githubs/:id(.:format)                            githubs#destroy
 #                                  customs GET      /customs(.:format)                                customs#index
 #                                          POST     /customs(.:format)                                customs#create
 #                               new_custom GET      /customs/new(.:format)                            customs#new
@@ -319,7 +304,6 @@ Rails.application.routes.draw do
       get 'user/:id' => 'admins#user', as: :user
     end
   end
-  resources :customs
 
   resources :customs do
     collection do
@@ -370,7 +354,6 @@ Rails.application.routes.draw do
         end
         resources :linkedins, controller: 'v1/linkedins'
         resources :githubs, controller: 'v1/githubs'
-        resources :customs, controller: 'v1/customs'
         resources :answers, controller: 'v1/answers' do
           member do
             post 'upload' => 'v1/answers#upload'

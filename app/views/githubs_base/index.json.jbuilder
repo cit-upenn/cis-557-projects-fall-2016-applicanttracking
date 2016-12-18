@@ -1,1 +1,0 @@
-json.array! @githubs, partial: 'githubs_base/github', as: :github
