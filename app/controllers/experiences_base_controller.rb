@@ -16,10 +16,10 @@ class ExperiencesBaseController < ApplicationController
 
   # GET /experiences/new
   def new
-    if Experience.exists?(current_user_credential.experiences) then
-      @experiences = current_user_credential.experiences
+    if Experience.exists?(current_user_credential.experiences.first) then
+      @experience = current_user_credential.experiences.first
     else
-      @experiences = [Experience.new]
+      @experience = Experience.new
     end
   end
 
@@ -36,6 +36,10 @@ class ExperiencesBaseController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+
+    if request.format != "application/json" then
+      @experience.user = current_user_credential.user
+    end
 
     respond_to do |format|
       if @experience.save

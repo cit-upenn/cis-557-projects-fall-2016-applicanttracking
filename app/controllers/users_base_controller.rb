@@ -36,13 +36,13 @@ class UsersBaseController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if request.format == "application/json" then
+    if request.format != "application/json" then
       @user.user_credential = current_user_credential
     end
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to new_experience_url, notice: 'User was successfully created.' }
+        format.html { redirect_to new_education_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class UsersBaseController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to new_experience_url, notice: 'User was successfully updated.' }
+        format.html { redirect_to new_education_url, notice: 'User was successfully updated.' }
         format.json { render json: @user, status: :ok }
       else
         format.html { render :edit }

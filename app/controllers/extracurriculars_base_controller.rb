@@ -3,7 +3,10 @@ class ExtracurricularsBaseController < ApplicationController
   # GET /extracurriculars
   # GET /extracurriculars.json
   def index
-    @extracurriculars = Extracurricular.all
+    respond_to do |format|
+      format.html { redirect_to new_extracurricular_url }
+      format.json { @extracurriculars = Extracurricular.all }
+    end
   end
 
   # GET /extracurriculars/1
@@ -13,7 +16,11 @@ class ExtracurricularsBaseController < ApplicationController
 
   # GET /extracurriculars/new
   def new
-    @extracurricular = Extracurricular.new
+    if Extracurricular.exists?(current_user_credential.extracurriculars.first) then
+      @extracurricular = current_user_credential.extracurriculars.first
+    else
+      @extracurricular = Extracurricular.new
+    end
   end
 
   # GET /extracurriculars/1/edit
@@ -30,9 +37,13 @@ class ExtracurricularsBaseController < ApplicationController
   def create
     @extracurricular = Extracurricular.new(extracurricular_params)
 
+    if request.format != "application/json" then
+      @extracurricular.user = current_user_credential.user
+    end
+
     respond_to do |format|
       if @extracurricular.save
-        format.html { redirect_to @extracurricular, notice: 'Extracurricular was successfully created.' }
+        format.html { redirect_to new_award_url, notice: 'Extracurricular was successfully created.' }
         format.json { render :show, status: :created, location: @extracurricular }
       else
         format.html { render :new }
@@ -46,7 +57,7 @@ class ExtracurricularsBaseController < ApplicationController
   def update
     respond_to do |format|
       if @extracurricular.update(extracurricular_params)
-        format.html { redirect_to @extracurricular, notice: 'Extracurricular was successfully updated.' }
+        format.html { redirect_to new_award_url, notice: 'Extracurricular was successfully updated.' }
         format.json { render :show, status: :ok, location: @extracurricular }
       else
         format.html { render :edit }
