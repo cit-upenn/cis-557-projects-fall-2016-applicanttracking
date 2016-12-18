@@ -319,8 +319,6 @@ Rails.application.routes.draw do
       get 'user/:id' => 'admins#user', as: :user
     end
   end
-  resources :linkedins
-  resources :githubs
   resources :customs
 
   resources :customs do
