@@ -147,26 +147,6 @@ ActiveRecord::Schema.define(version: 20161217235325) do
 
   add_index "extracurriculars", ["user_id"], name: "index_extracurriculars_on_user_id"
 
-  create_table "githubs", force: :cascade do |t|
-    t.string   "path"
-    t.string   "username"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "githubs", ["user_id"], name: "index_githubs_on_user_id"
-
-  create_table "linkedins", force: :cascade do |t|
-    t.string   "path"
-    t.string   "username"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "linkedins", ["user_id"], name: "index_linkedins_on_user_id"
-
   create_table "questions", force: :cascade do |t|
     t.string   "question_type"
     t.string   "prompt"
