@@ -50,13 +50,13 @@ ActiveRecord::Schema.define(version: 20161217235325) do
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "encrypted_password",                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -146,6 +146,26 @@ ActiveRecord::Schema.define(version: 20161217235325) do
   end
 
   add_index "extracurriculars", ["user_id"], name: "index_extracurriculars_on_user_id"
+
+  create_table "githubs", force: :cascade do |t|
+    t.string   "path"
+    t.string   "username"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "githubs", ["user_id"], name: "index_githubs_on_user_id"
+
+  create_table "linkedins", force: :cascade do |t|
+    t.string   "path"
+    t.string   "username"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "linkedins", ["user_id"], name: "index_linkedins_on_user_id"
 
   create_table "questions", force: :cascade do |t|
     t.string   "question_type"

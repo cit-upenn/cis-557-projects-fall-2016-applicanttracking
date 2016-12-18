@@ -1,8 +1,9 @@
-<%- model_class = User -%>
+<%- model_class = Admin -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div> User Info </div>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
   <dd><%= @user.first_name %></dd>
@@ -29,6 +30,46 @@
   <dt><strong><%= model_class.human_attribute_name(:submitted) %>:</strong></dt>
   <dd><%= @user.submitted %></dd>
 </dl>
+
+
+<div> Awards </div>
+<dl class="dl-horizontal">
+<% @awards.each do |award| %>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= award.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= award.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= award.date %></dd>
+<%end%>
+</dl>
+
+<div> Educations </div>
+<dl class="dl-horizontal">
+<% @educations.each do |education| %>
+  <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
+  <dd><%= education.start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= education.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current) %>:</strong></dt>
+  <dd><%= education.current %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:degree) %>:</strong></dt>
+  <dd><%= education.degree %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:school) %>:</strong></dt>
+  <dd><%= education.school %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gpa) %>:</strong></dt>
+  <dd><%= education.gpa %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:major) %>:</strong></dt>
+  <dd><%= education.major %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:minor) %>:</strong></dt>
+  <dd><%= education.minor %></dd>
+<%end%>
+</dl>
+
+
+
+
+
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               admin_path, :class => 'btn btn-default'  %>

@@ -10,6 +10,9 @@ class AdminsBaseController < ApplicationController
   def user
     puts "admin_base_controller user"
     @user = User.find(params[:id])
+    #@awards = Award.all.find_by user_id: params[:id]
+    @awards = Award.where(:user_id => params[:id])
+    @educations = Education.where(:user_id => params[:id])
   end
   
   def update
