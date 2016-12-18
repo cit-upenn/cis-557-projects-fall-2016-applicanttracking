@@ -31,4 +31,11 @@ class UserCredential < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
+  has_one :user
+  has_many :awards, through: :user
+  has_many :educations, through: :user
+  has_many :experiences, through: :user
+  has_many :extracurriculars, through: :user
+  has_many :answers, through: :user
+
 end

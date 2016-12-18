@@ -3,7 +3,10 @@ class UsersBaseController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    respond_to do |format|
+      format.html { redirect_to new_user_url }
+      format.json { @users = User.all }
+    end
   end
 
   # GET /
@@ -17,7 +20,11 @@ class UsersBaseController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if User.exists?(current_user_credential.user) then
+      @user = current_user_credential.user
+    else
+      @user = User.new
+    end
   end
 
   # GET /users/1/edit
@@ -29,9 +36,13 @@ class UsersBaseController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    if request.format == "application/json" then
+      @user.user_credential = current_user_credential
+    end
+
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to new_experience_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created }
       else
         format.html { render :new }
@@ -45,7 +56,7 @@ class UsersBaseController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to new_experience_url, notice: 'User was successfully updated.' }
         format.json { render json: @user, status: :ok }
       else
         format.html { render :edit }

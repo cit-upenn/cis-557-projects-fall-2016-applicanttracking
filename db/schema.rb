@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210012815) do
+ActiveRecord::Schema.define(version: 20161217235325) do
 
   create_table "admin_credentials", force: :cascade do |t|
     t.string   "email",                  default: "",      null: false
@@ -192,16 +192,19 @@ ActiveRecord::Schema.define(version: 20161210012815) do
     t.string   "middle_name"
     t.string   "last_name"
     t.date     "dob"
-    t.integer  "phone",          limit: 8
+    t.integer  "phone",              limit: 8
     t.string   "email"
     t.string   "street_address"
     t.string   "city"
     t.string   "state"
     t.string   "country"
     t.string   "zipcode"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.boolean  "submitted"
+    t.integer  "user_credential_id"
   end
+
+  add_index "users", ["user_credential_id"], name: "index_users_on_user_credential_id"
 
 end
