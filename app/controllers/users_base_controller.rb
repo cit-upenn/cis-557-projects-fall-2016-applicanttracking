@@ -24,6 +24,8 @@ class UsersBaseController < ApplicationController
 
   # GET /users/new
   def new
+
+    puts 'DOING THE CHECK!!!!!!!!'
     if User.exists?(current_user_credential.user) then
       puts 'user already exists'
       @user = current_user_credential.user
