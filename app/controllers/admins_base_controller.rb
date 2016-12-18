@@ -16,7 +16,7 @@ class AdminsBaseController < ApplicationController
     puts "called admin_update"
     @admin = current_admin_credential
     respond_to do |format|
-      if @admin.update(admin_credential_params)
+      if @admin.update(admin_params)
         puts "within if"
         format.html { redirect_to admins_path, notice: 'Admin was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin}

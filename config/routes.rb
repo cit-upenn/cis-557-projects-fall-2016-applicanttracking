@@ -313,7 +313,7 @@ Rails.application.routes.draw do
   resources :users
   resources :admins do
     member do 
-      post '/:id' => 'admins#update', as: :update
+      post '/' => 'admins#update', as: :update
     end
     collection do
       get 'user/:id' => 'admins#user', as: :user
