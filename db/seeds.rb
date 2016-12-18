@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Question.create( question_type: 'sample question' , prompt: 'what is your favorite activity?' )
+Question.create( question_type: 'another sample question' , prompt: 'what is your favorite activity?' )
+Question.create( question_type: 'more sample question' , prompt: 'what is your favorite activity?' )

@@ -53,7 +53,7 @@
   <div class="form-group">
     <%= f.label :gpa, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.number_field :gpa, :class => 'form-control' %>
+      <%= f.number_field :gpa, :class => 'form-control', :step => :any %>
     </div>
     <%=f.error_span(:gpa) %>
   </div>

@@ -24,6 +24,7 @@ class UsersBaseController < ApplicationController
 
   # GET /users/new
   def new
+
     if User.exists?(current_user_credential.user) then
       @user = current_user_credential.user
     else

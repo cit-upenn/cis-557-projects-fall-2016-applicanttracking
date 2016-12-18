@@ -46,11 +46,13 @@ gem 'paperclip'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'autoprefixer-rails'
+
 group :production do
   gem 'pg'
   gem 'newrelic_rpm' # heroku activity monitor
+  gem 'rails_12factor'
 end
-
 
 
 group :development, :test do
@@ -62,7 +64,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   
-  gem 'autoprefixer-rails'
+ 
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
