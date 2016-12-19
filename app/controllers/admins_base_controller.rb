@@ -50,11 +50,11 @@ class AdminsBaseController < ApplicationController
          if s != NIL && m != NIL
            u.score += s*m
          end
-      end
+       end
        u.actual_user = user
        users_array.push(u)
      end
-     users_array.sort_by{|user| user.score * -1}
+     users_array.sort_by!{|user| user.score * -1}
      @sorted_users = users_array
   end
 
