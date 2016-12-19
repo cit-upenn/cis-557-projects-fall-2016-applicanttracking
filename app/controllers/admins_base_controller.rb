@@ -54,9 +54,7 @@ class AdminsBaseController < ApplicationController
        u.actual_user = user
        users_array.push(u)
      end
-     users_array.sort_by! {|user| user.score}
-     users_array.each do |sorted_user|
-     end
+     users_array.sort_by{|user| user.score * -1}
      @sorted_users = users_array
   end
 
