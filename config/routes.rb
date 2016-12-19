@@ -349,8 +349,7 @@ Rails.application.routes.draw do
               get 'user/:id' => 'admins#user', as: :user
             end
         end
-        resources :linkedins, controller: 'v1/linkedins'
-        resources :githubs, controller: 'v1/githubs'
+        
         resources :answers, controller: 'v1/answers' do
           member do
             post 'upload' => 'v1/answers#upload'
@@ -361,7 +360,7 @@ Rails.application.routes.draw do
           end
         end
 
-        resources :customs do
+        resources :customs, controller: 'v1/customs' do
           collection do
             get 'user/:id' => 'v1/customs#user'
             get 'user/:id/type/:datatype' => 'v1/customs#type'
