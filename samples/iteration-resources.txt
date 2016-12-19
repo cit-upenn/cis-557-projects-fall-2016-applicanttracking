@@ -2,3 +2,6 @@ iteration-resources:
 
    github: https://github.com/cit-upenn/cis-557-projects-fall-2016-applicanttracking
    Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1901711
+   Heroku: 
+   	https://young-waters-82488.herokuapp.com/ 
+	https://git.heroku.com/young-waters-82488.git

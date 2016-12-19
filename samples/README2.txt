@@ -1,0 +1,12 @@
+
+Iteration 4 considerations:
+
+  1. The Github and LinkedIn models were removed along with their tests. After final deliberation with the customer, we decided that we were not going to be needing these models.
+
+  2. A major feature for this iteration included adding the ability for the admin to see a list of applicants sorted by their ranks (which is computed by summing the scores of several categories, each multiplied by a different weight). The admin page would now provide the admin the ability to also set the weights to different values and store them as a part of their admin profile. 
+  
+  In order to implement this functionality we modified the users and admin_credentials models. We created new columns in admin_crendentials for the category weights and we also created columns in the users model for the scores associated with each of the categories. An important design decision was made to keep the category weight within the admin_credentials model as opposed to an admin model, because we felt that the information for an admin profile should be stored in a single location. While it was possible to have two separate tables which are associated via a foreign key, having a single entity proved to be more manageable allowed for simpler logic without having to worry about maintaining consistency between the two tables. 
+
+  On the other hand, we did make this split in the users model. We kept the user credentials and users model separate. This was necessary mostly because mixing devise related columns in the user model made it very inconvenient to create the user in the default devise sign in page. We felt that entering application information in the sign-in page was out of place. Hence, naturally, we decided to separate the two and add the additional score information in the users model.
+
+  3. Finally, we decided that the application should feel like an application where the applicant would have to sequentially enter in applicant information. Hence, we updated the UI to begin from the applicant information page and have the forms for all other categories would follow one after another. In addition to this, the applicant would be able to see a visual progress bar and be able to see the list of categories to jump to if desired. 
