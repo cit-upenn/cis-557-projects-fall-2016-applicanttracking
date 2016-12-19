@@ -1,9 +1,9 @@
 <%- model_class = Admin -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1>Applicant Information</h1>
 </div>
 
-<div> User Info </div>
+<div> User Information </div>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
   <dd><%= @user.first_name %></dd>
@@ -31,7 +31,7 @@
   <dd><%= @user.submitted %></dd>
 </dl>
 
-<div> Educations </div>
+<div> Education Information </div>
 <dl class="dl-horizontal">
 <% @educations.each do |education| %>
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
@@ -53,7 +53,7 @@
 <%end%>
 </dl>
 
-<div> Experiences </div>
+<div> Experience Information </div>
 <dl class="dl-horizontal">
 <% @experiences.each do |experience| %>
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
@@ -71,7 +71,7 @@
 <%end%>
 </dl>
 
-<div> Extracurriculars </div>
+<div> Extracurricular Information </div>
 <dl class="dl-horizontal">
 <% @extracurriculars.each do |extracurricular| %>
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
@@ -89,7 +89,7 @@
 <%end%>
 </dl>
 
-<div> Awards </div>
+<div> Award Information </div>
 <dl class="dl-horizontal">
 <% @awards.each do |award| %>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -101,16 +101,12 @@
 <%end%>
 </dl>
 
-<div> Answers </div>
+<div> Video Answers</div>
 <dl class="dl-horizontal">
 <% @answers.each do |answer| %>
-  <dt><strong><%= model_class.human_attribute_name(:data_type) %>:</strong></dt>
-  <dd><%= answer.data_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:question_id) %>:</strong></dt>
-  <dd><%= answer.question_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:video) %>:</strong></dt>
   <% if answer.video.present? %>
-    <dd><%= link_to "video", answer.video.url %></dd>
+    <dd><%= link_to "#{answer.video_file_name}", answer.video.url %></dd>
   <% end %>
 <%end%>
 </dl>
