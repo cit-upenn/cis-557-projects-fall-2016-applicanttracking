@@ -106,7 +106,7 @@
 <% @user.answers.each do |answer| %>
   <dt><strong><%= model_class.human_attribute_name(:video) %>:</strong></dt>
   <% if answer.video.present? %>
-    <dd><%= link_to "video", answer.video.url %></dd>
+    <dd><%= link_to "#{answer.video_file_name}", answer.video.url %></dd>
   <% end %>
 <%end%>
 </dl>
