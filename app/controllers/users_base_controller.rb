@@ -20,6 +20,7 @@ class UsersBaseController < ApplicationController
 
   def overview
     @user = current_user_credential.user
+    render layout: "overview"
   end
 
   # GET /users/new
