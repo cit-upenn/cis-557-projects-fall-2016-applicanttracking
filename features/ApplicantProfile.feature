@@ -10,7 +10,7 @@ Feature: Applicant Profile page
 	Scenario: Click a new Applicant button 
 		Given that I am on the Users Page
 		When I click new Users button 
-		Then I should see the new Applicant form page
+		Then I should see the new Education form page
 
 	Scenario: Create a new Applicant Profile
 		Given that I am on the New Users Page

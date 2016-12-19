@@ -5,19 +5,23 @@ Feature: Admins page
 	I want to create a new Admin Profile
 
     Background:
+        Given a Dummy User with a score for Testing
 		Given I need to Sign in as Admin
 
-	Scenario: Click a new Admin button 
+	Scenario: Display main Admin page 
+		Given that I am on the Admins Page 
+		Then I should see the Admin main page
+
+    Scenario: The Admin has default Scoring Weights
 		Given that I am on the Admins Page
-		When I click new Admin button 
-		Then I should see the new Admin form page
+		When I check the Admin Scoring Weights
+		Then I should see default weights
 
-	Scenario: Create a new Admin Profile
-		Given that I am on the New Admins Page
-		When I try to create a new Admin Profile
-		Then I should see the new Admin page
+	Scenario: Update the Admin Scoring Weights
+		Given that I am on the Admins Page
+		When I update the Admin Scoring Weights
+		Then the new weight should be saved
 
-	Scenario: Create a new Admin Profile without name field
-		Given that I am on the New Admins Page
-		When I try to create a new Admin Profile without name field
-		Then I should see an Error
+	Scenario: Display Applicants with a calculated Rank
+		Given that I am on the Admins Page
+		Then I should see an applicant with a score

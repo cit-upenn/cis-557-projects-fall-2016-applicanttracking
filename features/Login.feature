@@ -7,7 +7,6 @@ Feature: Devise Log in system
 	Scenario: Sign in into Admin Page with Admin Credentials
 	    Given I need to Sign in as Admin
 		Given that I am on the New Admins Page
-		When I try to create a new Admin Profile
 		Then I should see the new Admin page
 
 	Scenario: Sign in into Users profile with User Credentials

@@ -21,6 +21,25 @@ Given (/^a Dummy User for Testing$/) do
 	                   ) 
 end
 
+Given (/^a Dummy User with a score for Testing$/) do
+	user = User.create(first_name: "David", 
+					   last_name: "Camp", 
+					   phone: 3017429005, 
+					   dob: "2016-11-14" ,
+		 			   email: "test@gmail.com",
+		 			   street_address: "1234 test dr.",
+		 			   city: "Philadelphia",
+		 			   state: "PA", 
+		 			   country: "US",
+		 			   zipcode: "12345",
+		 			   created_at: "2016-11-14 02:34:39",
+		 			   updated_at: "2016-11-14 02:34:39",
+		 			   submitted: true,
+		 			   travel_score: "2"
+	                   ) 
+end
+
+
 Given (/^a Dummy Question for Testing$/) do
 	question = Question.create(prompt: "What is your occupation?", 
 							   question_type: "personal"	
@@ -76,7 +95,7 @@ end
 
 # => Admins 								#
 Given (/^that I am on the New Admins Page$/ ) do
-	visit("http://localhost:3000/admins/new")
+	visit("http://localhost:3000/admins")
 end
 
 Given (/^that I am on the Admins Page$/ ) do
@@ -227,7 +246,7 @@ When (/^I try to create a new Award$/ ) do
 	find('#award_date_2i').find(:xpath, "option[@value=6]").select_option
 	find('#award_date_3i').find(:xpath, "option[@value=25]").select_option
 
-	fill_in 'award_user_id' , :with => "1"
+	# fill_in 'award_user_id' , :with => "1"
 
 	click_button "Create Award"
 
@@ -241,7 +260,21 @@ When (/^I try to create a new Award Without name field$/ ) do
 	find('#award_date_2i').find(:xpath, "option[@value=6]").select_option
 	find('#award_date_3i').find(:xpath, "option[@value=25]").select_option
 
-	fill_in 'award_user_id' , :with => "1"
+	# fill_in 'award_user_id' , :with => "1"
+
+	click_button "Create Award"
+
+end
+
+When (/^I try to create a new Award with an invalid date$/ ) do
+
+	fill_in 'award_description' , :with => "Prestigious CS award"
+
+	find('#award_date_1i').find(:xpath, "option[@value=2016]").select_option
+	find('#award_date_2i').find(:xpath, "option[@value=12]").select_option
+	find('#award_date_3i').find(:xpath, "option[@value=25]").select_option
+
+	# fill_in 'award_user_id' , :with => "1"
 
 	click_button "Create Award"
 
@@ -257,6 +290,23 @@ end
 When (/^I click new Admin button$/ ) do
 	find("a[href='/admins/new']").click
 end
+
+When (/I update the Admin Scoring Weights$/ ) do
+
+	click_button "Ranking Metrics"
+
+	fill_in 'admin_travel_metric' , :with => "0.5"
+	
+	click_button "Save Ranking Metrics"
+
+end
+
+When (/I check the Admin Scoring Weights$/ ) do
+
+	click_button "Ranking Metrics"
+
+end
+
 
 When (/I try to create a new Admin Profile$/ ) do
 	fill_in 'admin_api_auth_token' , :with => "SADFASF1231231SDFASDF"
@@ -288,7 +338,8 @@ end
 # => Education 								#
 
 When (/^I click new Education button$/ ) do
-	find("a[href='/educations/new']").click
+	# find("a[href='/educations/new']").click
+	click_button "Create Education"
 end
 
 When (/I try to create a new Education Content$/ ) do
@@ -308,7 +359,7 @@ When (/I try to create a new Education Content$/ ) do
 	fill_in 'education_school' , :with => "UPenn"
 	fill_in 'education_gpa' , :with => "4.0"
 	fill_in 'education_major' , :with => "Computer Science"
-	fill_in 'education_user_id' , :with => "1"
+	# fill_in 'education_user_id' , :with => "1"
 
 	click_button "Create Education"
 
@@ -331,12 +382,57 @@ When (/I try to create a new Education Content without gpa field$/ ) do
 	fill_in 'education_school' , :with => "UPenn"
 	# fill_in 'education_gpa' , :with => "4.0"
 	fill_in 'education_major' , :with => "Computer Science"
-	fill_in 'education_user_id' , :with => "1"
+	# fill_in 'education_user_id' , :with => "1"
 
 	click_button "Create Education"
 
 end
 
+When (/I try to create a new Education Content with an invalid start date$/ ) do
+	
+	# fill_in 'education_start' , :with => "2016-10-29"
+	# fill_in 'education_end' , :with => "2016-10-30"
+
+	find('#education_start_1i').find(:xpath, "option[@value=2013]").select_option
+	find('#education_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#education_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#education_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_end_date_3i').find(:xpath, "option[@value=25]").select_option
+	
+	fill_in 'education_degree' , :with => "MA"
+	fill_in 'education_school' , :with => "UPenn"
+	fill_in 'education_gpa' , :with => "4.0"
+	fill_in 'education_major' , :with => "Computer Science"
+	# fill_in 'education_user_id' , :with => "1"
+
+	click_button "Create Education"
+
+end
+
+When (/I try to create a new Education Content with an invalid end date$/ ) do
+	
+	# fill_in 'education_start' , :with => "2016-10-29"
+	# fill_in 'education_end' , :with => "2016-10-30"
+
+	find('#education_start_1i').find(:xpath, "option[@value=2012]").select_option
+	find('#education_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#education_end_date_1i').find(:xpath, "option[@value=2017]").select_option
+	find('#education_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#education_end_date_3i').find(:xpath, "option[@value=25]").select_option
+	
+	fill_in 'education_degree' , :with => "MA"
+	fill_in 'education_school' , :with => "UPenn"
+	fill_in 'education_gpa' , :with => "4.0"
+	fill_in 'education_major' , :with => "Computer Science"
+	# fill_in 'education_user_id' , :with => "1"
+
+	click_button "Create Education"
+
+end
 
 
 When (/^I try to delete an existing Education$/ ) do
@@ -368,7 +464,7 @@ When (/I try to create a new Experience Content$/ ) do
 	fill_in 'experience_title' , :with => "Software Engineer"
 	fill_in 'experience_company' , :with => "Microsoft"
 	fill_in 'experience_description' , :with => "Do CS stuff"
-	fill_in 'experience_user_id' , :with => "1"
+	#fill_in 'experience_user_id' , :with => "1"
 
 	click_button "Create Experience"
 
@@ -391,12 +487,57 @@ When (/Create a new Experience Content without company field$/ ) do
 	fill_in 'experience_title' , :with => "Software Engineer"
 	#fill_in 'experience_company' , :with => "Microsoft"
 	fill_in 'experience_description' , :with => "Do CS stuff"
-	fill_in 'experience_user_id' , :with => "1"
+	#fill_in 'experience_user_id' , :with => "1"
 
 	click_button "Create Experience"
 
 end
 
+When (/I try to create a new Experience Content with an invalid start date$/ ) do
+	
+	# fill_in 'experience_start' , :with => "2016-10-29"
+	# fill_in 'experience_end' , :with => "2016-10-30"
+
+	find('#experience_start_1i').find(:xpath, "option[@value=2012]").select_option
+	find('#experience_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#experience_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+	
+	fill_in 'experience_title' , :with => "Software Engineer"
+	#fill_in 'experience_company' , :with => "Microsoft"
+	fill_in 'experience_description' , :with => "Do CS stuff"
+	#fill_in 'experience_user_id' , :with => "1"
+
+	click_button "Create Experience"
+
+end
+
+When (/I try to create a new Experience Content with an invalid end date$/ ) do
+	
+	# fill_in 'experience_start' , :with => "2016-10-29"
+	# fill_in 'experience_end' , :with => "2016-10-30"
+
+	find('#experience_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#experience_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#experience_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#experience_end_date_1i').find(:xpath, "option[@value=2016]").select_option
+	find('#experience_end_date_2i').find(:xpath, "option[@value=12]").select_option
+	find('#experience_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+	
+	fill_in 'experience_title' , :with => "Software Engineer"
+	#fill_in 'experience_company' , :with => "Microsoft"
+	fill_in 'experience_description' , :with => "Do CS stuff"
+	#fill_in 'experience_user_id' , :with => "1"
+
+	click_button "Create Experience"
+
+end
 
 When (/^I try to delete an existing Experience$/ ) do
 	click_button "Delete"
@@ -428,7 +569,7 @@ When (/I try to create a new Extracurriculars Content$/ ) do
 	check('extracurricular_current')
 	fill_in 'extracurricular_position' , :with => "Advisor"
 	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
-	fill_in 'extracurricular_user_id' , :with => "1"
+	#fill_in 'extracurricular_user_id' , :with => "1"
 
 	click_button "Create Extracurricular"
 
@@ -450,7 +591,51 @@ When (/I try to create a new Extracurriculars Content without position field$/ )
 	
 	#fill_in 'extracurricular_position' , :with => "Advisor"
 	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
-	fill_in 'extracurricular_user_id' , :with => "1"
+	#fill_in 'extracurricular_user_id' , :with => "1"
+
+	click_button "Create Extracurricular"
+
+end
+
+When (/I try to create a new Extracurriculars Content with an invalid start date$/ ) do
+	
+	# fill_in 'extracurricular_start' , :with => "2016-10-29"
+	# fill_in 'extracurricular_end' , :with => "2016-10-30"
+	find('#extracurricular_start_1i').find(:xpath, "option[@value=2013]").select_option
+	find('#extracurricular_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#extracurricular_end_date_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_end_date_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+	fill_in 'extracurricular_organization' , :with => "Microhard"
+	
+	fill_in 'extracurricular_position' , :with => "Advisor"
+	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
+	#fill_in 'extracurricular_user_id' , :with => "1"
+
+	click_button "Create Extracurricular"
+
+end
+
+When (/I try to create a new Extracurriculars Content with an invalid end date$/ ) do
+	
+	# fill_in 'extracurricular_start' , :with => "2016-10-29"
+	# fill_in 'extracurricular_end' , :with => "2016-10-30"
+	find('#extracurricular_start_1i').find(:xpath, "option[@value=2011]").select_option
+	find('#extracurricular_start_2i').find(:xpath, "option[@value=6]").select_option
+	find('#extracurricular_start_3i').find(:xpath, "option[@value=25]").select_option
+
+	find('#extracurricular_end_date_1i').find(:xpath, "option[@value=2016]").select_option
+	find('#extracurricular_end_date_2i').find(:xpath, "option[@value=12]").select_option
+	find('#extracurricular_end_date_3i').find(:xpath, "option[@value=25]").select_option
+
+	fill_in 'extracurricular_organization' , :with => "Microhard"
+	
+	fill_in 'extracurricular_position' , :with => "Advisor"
+	fill_in 'extracurricular_description' , :with => "Do CS hard stuff"
+	#fill_in 'extracurricular_user_id' , :with => "1"
 
 	click_button "Create Extracurricular"
 
@@ -556,25 +741,25 @@ end
 
 When (/I try to create a new Answers Content$/ ) do
 	
-	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
-	fill_in 'answer_data_type' , :with => "text"
-	#fill_in 'answer_video_answer' , :with => "1"
-	fill_in 'answer_question_id' , :with => "1"
-	fill_in 'answer_user_id' , :with => "1"
+	# fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	# fill_in 'answer_data_type' , :with => "text"
+	# #fill_in 'answer_video_answer' , :with => "1"
+	# fill_in 'answer_question_id' , :with => "1"
+	# fill_in 'answer_user_id' , :with => "1"
+	attach_file('answer_video', Rails.root.join('samples', 'small.mp4'))
 
+	click_button "Create Answer"
 
+end
+
+When (/I try to create a new Answers Content without a video$/ ) do
+	
 	click_button "Create Answer"
 
 end
  
 When (/I try to create a new Answers Content with Video$/ ) do
 	
-	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
-	fill_in 'answer_data_type' , :with => "Video"
-	#fill_in 'answer_video_answer' , :with => "1"
-	fill_in 'answer_question_id' , :with => "1"
-	fill_in 'answer_user_id' , :with => "1"
-
 	#attach_file('ok', File.absolute_path('./fileset/publisher/upload_pic.jpg'))
     
     attach_file('answer_video', Rails.root.join('samples', 'small.mp4'))
@@ -585,11 +770,11 @@ end
 
 When (/I try to create a new Answers Content with Unsupported Video Type$/ ) do
 	
-	fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
-	fill_in 'answer_data_type' , :with => "Video"
-	#fill_in 'answer_video_answer' , :with => "1"
-	fill_in 'answer_question_id' , :with => "1"
-	fill_in 'answer_user_id' , :with => "1"
+	# fill_in 'answer_text_answer' , :with => "SAMPLE ANSWER"
+	# fill_in 'answer_data_type' , :with => "Video"
+	# #fill_in 'answer_video_answer' , :with => "1"
+	# fill_in 'answer_question_id' , :with => "1"
+	# fill_in 'answer_user_id' , :with => "1"
 
 	#attach_file('ok', File.absolute_path('./fileset/publisher/upload_pic.jpg'))
     
@@ -639,15 +824,15 @@ end
 
 
 # => Awards                                 #
-Then (/^I should see the new Award page$/) do
-	assert page.has_content?( "Award was successfully created" )
+Then (/^I should see the Video Answer page$/) do
+	assert page.has_content?( "Video Answer" )
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
 Then (/^I should see the new Award form page$/) do
-	assert page.has_content?( "New Award" )
+	assert page.has_content?( "Award Information" )
 end
 
 
@@ -660,15 +845,45 @@ end
 
 
 # => Admins 								#
+
+Then (/^I should see default weights$/) do
+	
+	assert_equal(find_field('admin_travel_metric').value, '0.23')
+	#definition_list = find(:xpath, "//dl")
+	#expect(find_field('user_first_name').value).to eq 'Beyonce'
+end
+
+
+Then (/^the new weight should be saved$/) do
+	assert page.has_content?( "Admin was successfully updated." )
+
+	click_button "Ranking Metrics"
+
+	assert_equal(find_field('admin_travel_metric').value, '0.5')
+	#definition_list = find(:xpath, "//dl")
+	#expect(find_field('user_first_name').value).to eq 'Beyonce'
+end
+
+Then (/^I should see an applicant with a score$/) do
+	
+	@rows = page.all("//table[@id='applicant_table']/tbody/tr/td")
+	#@data = @rows.find("td")
+	assert_equal(@rows[1].text, "0.46")
+
+	#expect(find_field('admin_travel_metric').value).to eq '0.5'
+	#definition_list = find(:xpath, "//dl")
+	#expect(find_field('user_first_name').value).to eq 'Beyonce'
+end
+
 Then (/^I should see the new Admin page$/) do
-	assert page.has_content?( "Admin was successfully created" )
+	assert page.has_content?( "Admins" )
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
-Then (/^I should see the new Admin form page$/) do
-	assert page.has_content?( "New Admin" )
+Then (/^I should see the Admin main page$/) do
+	assert page.has_content?( "Ranking Metrics" )
 end
 
 Then (/^I should see that the Admin Profile is deleted$/) do
@@ -688,7 +903,7 @@ Then (/^I should see the new Education page$/) do
 end
 
 Then (/^I should see the new Education form page$/) do
-	assert page.has_content?( "New Education" )
+	assert page.has_content?( "Education Information" )
 end
 
 Then (/^I should see that the Education Content is deleted$/) do
@@ -700,14 +915,14 @@ end
 
 # => Experience 							#
 Then (/^I should see the new Experience page$/) do
-	assert page.has_content?( "Experience was successfully created" )
+	assert page.has_content?( "Experience Information" )
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
 Then (/^I should see the new Experience form page$/) do
-	assert page.has_content?( "New Experience" )
+	assert page.has_content?( "Experience Information" )
 end
 
 Then (/^I should see that the Experience Content is deleted$/) do
@@ -719,14 +934,14 @@ end
 
 # => Extracurriculars 						#
 Then (/^I should see the new Extracurriculars page$/) do
-	assert page.has_content?( "Extracurricular was successfully created" )
+	assert page.has_content?( "Extracurricular Information" )
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
 end
 
 Then (/^I should see the new Extracurricular form page$/) do
-	assert page.has_content?( "New Extracurricular" )
+	assert page.has_content?( "Extracurricular Information" )
 end
 
 Then (/^I should see that the Extracurriculars Content is deleted$/) do
@@ -789,7 +1004,7 @@ end
 # => Answer 								#
 
 Then (/^I should see the new Answer form page$/) do
-	assert page.has_content?( "New Answer" )
+	assert page.has_content?( "Video Answer" )
 end
 
 Then (/^I should see the new Answers page$/) do
@@ -798,11 +1013,16 @@ Then (/^I should see the new Answers page$/) do
 end
 
 Then (/^I should see the new Answers page with the Video name displayed$/) do
-	assert page.has_content?( "Answer was successfully created" )
+	# assert page.has_content?( "Answer was successfully created" )
 	page.has_css?("a[contains(href, 'small.mp4')]")
 
 end
 
+Then (/^I should see the User Overview page$/) do
+	# assert page.has_content?( "Answer was successfully created" )
+	page.has_content?("Applicant Information")
+
+end
 
 # => General Error message #
 Then (/^I should see an Error$/) do
