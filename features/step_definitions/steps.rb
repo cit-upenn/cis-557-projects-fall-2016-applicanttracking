@@ -876,7 +876,7 @@ Then (/^I should see an applicant with a score$/) do
 end
 
 Then (/^I should see the new Admin page$/) do
-	assert page.has_content?( "Admins" )
+	assert page.has_content?( "All Applicants" )
 
 	#definition_list = find(:xpath, "//dl")
 	#expect(find_field('user_first_name').value).to eq 'Beyonce'
